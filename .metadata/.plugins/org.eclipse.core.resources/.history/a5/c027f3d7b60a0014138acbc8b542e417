@@ -1,0 +1,5 @@
+import javafx.scene.paint.Color;
+
+def trafficColors : Color[] = [Color.RED, Color.YELLOW, Color.GREEN];
+def trafficColorNames : String[] = ["Red", "Yellow", "Green"];
+def trafficColorActions : String[] = ["Stop", "Slow", "Go"];

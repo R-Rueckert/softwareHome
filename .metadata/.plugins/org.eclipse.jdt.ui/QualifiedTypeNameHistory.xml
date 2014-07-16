@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="QuickSort"/>
+<fullyQualifiedTypeName name="AlgoTools.IO"/>
+<fullyQualifiedTypeName name="ArrayKeller"/>
+<fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
+<fullyQualifiedTypeName name="VerweisListe"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="java.sql.Array"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
+<fullyQualifiedTypeName name="javafx.scene.Parent"/>
+<fullyQualifiedTypeName name="java.awt.Button"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Button"/>
+<fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+<fullyQualifiedTypeName name="javafx.fxml.FXML"/>
+</qualifiedTypeNameHistroy>
