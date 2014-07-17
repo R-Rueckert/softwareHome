@@ -22,9 +22,6 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-//		DatabaseManager dbMgn = new DatabaseManager();
-//		dbMgn.connect();
-		
 		
 		launch(args);
 		
