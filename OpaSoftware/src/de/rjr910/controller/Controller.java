@@ -48,11 +48,16 @@ public class Controller implements Initializable {
 	
 	private void generateAnswers(){
 		ResultSet rs;
+		int maxEntries = getMaxEntries("Deutsch");
+		int entry = getRandomNumber(maxEntries);
 		
 		try {
 			stmt = getStatement();
 			rs = stmt.executeQuery("SELECT * FROM DEUTSCH");
-			rs.next();
+//			System.out.println("Entries DB= " + maxEntries);
+			for(int i = 1; i<entry;i++){
+				rs.next();
+			}
 			this.btnAnswer1.setText(rs.getString("ANSWER1"));
 			this.btnAnswer2.setText(rs.getString("ANSWER2"));
 			this.btnAnswer3.setText(rs.getString("ANSWER3"));
@@ -65,6 +70,31 @@ public class Controller implements Initializable {
 		}
 			
 		
+		
+	}
+	private int getRandomNumber(int maxEntries) {
+
+		int rand = (int) (Math.random() * maxEntries);
+		return rand;
+	}
+	private int getMaxEntries(String table) {
+		
+		int entries = -1;
+		ResultSet idMax;
+		Statement st2 = null;
+		
+		try {
+			st2 = getStatement();
+			idMax = st2.executeQuery("select nvl(max(id),0) max_id from " + table);
+			if(idMax.next()){
+				entries = idMax.getInt("max_id");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return entries;
 	}
 	
 	
