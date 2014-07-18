@@ -15,8 +15,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.Color;
 import de.rjr910.database.DatabaseManager;
 
 public class Controller implements Initializable {
@@ -55,14 +53,6 @@ public class Controller implements Initializable {
 		ResultSet rs;
 		int maxEntries = getMaxEntries("Deutsch");
 		int entry = getRandomNumber(maxEntries);
-		this.btnAnswer1.getStyleClass().remove("buttonRed");
-		this.btnAnswer1.getStyleClass().remove("buttonGreen");
-		this.btnAnswer2.getStyleClass().remove("buttonRed");
-		this.btnAnswer2.getStyleClass().remove("buttonGreen");
-		this.btnAnswer3.getStyleClass().remove("buttonRed");
-		this.btnAnswer3.getStyleClass().remove("buttonGreen");
-		this.btnAnswer4.getStyleClass().remove("buttonRed");
-		this.btnAnswer4.getStyleClass().remove("buttonGreen");
 		
 		try {
 			stmt = getStatement();
@@ -89,30 +79,40 @@ public class Controller implements Initializable {
 			public void handle(ActionEvent event) {
 				
 				if(checkResult(btnAnswer1, solution)){
-//					winMessage(btnAnswer1);
+					winMessage(btnAnswer1);
 					generateAnswers();
+				}else{
+					loseMessage();
 				}
 			}
 		});
 		btnAnswer2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if(checkResult(btnAnswer2, solution)){
-//					winMessage(btnAnswer2);
+					winMessage(btnAnswer2);
 					generateAnswers();
+				}else{
+					loseMessage();
 				}
 			}
 		});
 		btnAnswer3.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if(checkResult(btnAnswer3, solution)){
+					winMessage(btnAnswer3);
 					generateAnswers();
+				}else{
+					loseMessage();
 				}
 			}
 		});
 		btnAnswer4.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if(checkResult(btnAnswer4 ,solution)){
+					winMessage(btnAnswer4);
 					generateAnswers();
+				}else{
+					loseMessage();
 				}
 			}
 		});
@@ -121,7 +121,7 @@ public class Controller implements Initializable {
 	}
 	private int getRandomNumber(int maxEntries) {
 
-		int rand = (int) (Math.random() * maxEntries)+1;
+		int rand = (int) (Math.random() * maxEntries);
 		return rand;
 	}
 	private int getMaxEntries(String table) {
@@ -147,11 +147,9 @@ public class Controller implements Initializable {
 	private boolean checkResult(Button btnAnswer, String solution){
 		if(btnAnswer.getText().toUpperCase().equals(solution)){
 			System.out.println("Korrekt");
-			winMessage(btnAnswer);
 			return true;
 		}else{
 			System.out.println("Falsch");
-			loseMessage(btnAnswer);
 			
 			return false;
 		}
@@ -161,14 +159,13 @@ public class Controller implements Initializable {
 		
 		
 	}
-	private void loseMessage(Button btnAnswer) {
-		btnAnswer.getStyleClass().add("buttonRed");
+	private void loseMessage() {
+		// TODO Auto-generated method stub
 		
 	}
 
-	private void winMessage(Button btnAnswer) {
-
-		btnAnswer.getStyleClass().add("buttonGreen");
+	private void winMessage(Button btnAnswer1) {
+		// TODO Auto-generated method stub
 		
 	}
 	

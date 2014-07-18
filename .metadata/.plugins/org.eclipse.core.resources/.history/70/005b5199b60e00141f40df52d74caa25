@@ -57,12 +57,6 @@ public class Controller implements Initializable {
 		int entry = getRandomNumber(maxEntries);
 		this.btnAnswer1.getStyleClass().remove("buttonRed");
 		this.btnAnswer1.getStyleClass().remove("buttonGreen");
-		this.btnAnswer2.getStyleClass().remove("buttonRed");
-		this.btnAnswer2.getStyleClass().remove("buttonGreen");
-		this.btnAnswer3.getStyleClass().remove("buttonRed");
-		this.btnAnswer3.getStyleClass().remove("buttonGreen");
-		this.btnAnswer4.getStyleClass().remove("buttonRed");
-		this.btnAnswer4.getStyleClass().remove("buttonGreen");
 		
 		try {
 			stmt = getStatement();
@@ -169,7 +163,6 @@ public class Controller implements Initializable {
 	private void winMessage(Button btnAnswer) {
 
 		btnAnswer.getStyleClass().add("buttonGreen");
-		
 	}
 	
 	

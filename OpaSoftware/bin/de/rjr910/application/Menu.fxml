@@ -25,9 +25,9 @@
                     <Pane fx:id="posibleLetters" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
                       <children>
                         <Button fx:id="btnAnswer1" cancelButton="false" defaultButton="true" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
-                        <Button fx:id="btnAnswer3" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
+                        <Button fx:id="btnAnswer3" defaultButton="true" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
                         <Button id="btnAnswer1" fx:id="btnAnswer2" defaultButton="true" layoutX="300.0" layoutY="15.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
-                        <Button fx:id="btnAnswer4" layoutX="300.0" layoutY="89.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
+                        <Button fx:id="btnAnswer4" defaultButton="true" layoutX="300.0" layoutY="89.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
                       </children>
                     </Pane>
                   </children>

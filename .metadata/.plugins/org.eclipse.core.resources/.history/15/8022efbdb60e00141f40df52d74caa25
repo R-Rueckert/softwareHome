@@ -169,7 +169,6 @@ public class Controller implements Initializable {
 	private void winMessage(Button btnAnswer) {
 
 		btnAnswer.getStyleClass().add("buttonGreen");
-		
 	}
 	
 	
