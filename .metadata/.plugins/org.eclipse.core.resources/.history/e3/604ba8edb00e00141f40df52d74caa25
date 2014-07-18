@@ -26,7 +26,6 @@ public class Controller implements Initializable {
 	DatabaseManager dbMan = new DatabaseManager();
 	Connection conn = dbMan.getConnection();
 	Statement stmt;
-	private String solution;
 	@FXML private ImageView image;
 	
 	
@@ -53,6 +52,7 @@ public class Controller implements Initializable {
 		ResultSet rs;
 		int maxEntries = getMaxEntries("Deutsch");
 		int entry = getRandomNumber(maxEntries);
+		String solution;
 		
 		try {
 			stmt = getStatement();
@@ -77,7 +77,6 @@ public class Controller implements Initializable {
 		
 		btnAnswer1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				
 				if(checkResult(btnAnswer1, solution)){
 					winMessage(btnAnswer1);
 					generateAnswers();
@@ -88,7 +87,7 @@ public class Controller implements Initializable {
 		});
 		btnAnswer2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if(checkResult(btnAnswer2, solution)){
+				if(checkResult(btnAnswer2)){
 					winMessage(btnAnswer2);
 					generateAnswers();
 				}else{
@@ -98,7 +97,7 @@ public class Controller implements Initializable {
 		});
 		btnAnswer3.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if(checkResult(btnAnswer3, solution)){
+				if(checkResult(btnAnswer3)){
 					winMessage(btnAnswer3);
 					generateAnswers();
 				}else{
@@ -108,7 +107,7 @@ public class Controller implements Initializable {
 		});
 		btnAnswer4.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if(checkResult(btnAnswer4 ,solution)){
+				if(checkResult(btnAnswer4)){
 					winMessage(btnAnswer4);
 					generateAnswers();
 				}else{
@@ -145,16 +144,10 @@ public class Controller implements Initializable {
 	}
 	
 	private boolean checkResult(Button btnAnswer, String solution){
-		if(btnAnswer.getText().equals(solution)){
-			System.out.println("Korrekt");
-			return true;
-		}else{
-			System.out.println("Falsch");
-			
-			return false;
-		}
 		
 		
+		
+		return false;
 		
 		
 		

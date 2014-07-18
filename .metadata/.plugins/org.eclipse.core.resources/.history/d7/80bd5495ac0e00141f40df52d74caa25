@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,14 +17,13 @@ import de.rjr910.database.DatabaseManager;
 
 public class Controller implements Initializable {
 	
-	@FXML private Button btnAnswer1 = new Button();
-	@FXML private Button btnAnswer2 = new Button();
-	@FXML private Button btnAnswer3 = new Button();
-	@FXML private Button btnAnswer4 = new Button();
+	@FXML private Button btnAnswer1;
+	@FXML private Button btnAnswer2;
+	@FXML private Button btnAnswer3;
+	@FXML private Button btnAnswer4;
 	DatabaseManager dbMan = new DatabaseManager();
 	Connection conn = dbMan.getConnection();
 	Statement stmt;
-	private String solution;
 	@FXML private ImageView image;
 	
 	
@@ -65,57 +62,13 @@ public class Controller implements Initializable {
 			this.btnAnswer2.setText(rs.getString("ANSWER2"));
 			this.btnAnswer3.setText(rs.getString("ANSWER3"));
 			this.btnAnswer4.setText(rs.getString("ANSWER4"));
-			solution = rs.getString("SOLUTION");
 			String path = rs.getString("IMAGEPATH");
 			setImage(path);
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		btnAnswer1.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				
-				if(checkResult(btnAnswer1, solution)){
-					winMessage(btnAnswer1);
-					generateAnswers();
-				}else{
-					loseMessage();
-				}
-			}
-		});
-		btnAnswer2.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				if(checkResult(btnAnswer2, solution)){
-					winMessage(btnAnswer2);
-					generateAnswers();
-				}else{
-					loseMessage();
-				}
-			}
-		});
-		btnAnswer3.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				if(checkResult(btnAnswer3, solution)){
-					winMessage(btnAnswer3);
-					generateAnswers();
-				}else{
-					loseMessage();
-				}
-			}
-		});
-		btnAnswer4.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent event) {
-				if(checkResult(btnAnswer4 ,solution)){
-					winMessage(btnAnswer4);
-					generateAnswers();
-				}else{
-					loseMessage();
-				}
-			}
-		});
+			
 		
 		
 	}
@@ -142,31 +95,6 @@ public class Controller implements Initializable {
 		}
 		
 		return entries;
-	}
-	
-	private boolean checkResult(Button btnAnswer, String solution){
-		if(btnAnswer.getText().equals(solution)){
-			System.out.println("Korrekt");
-			return true;
-		}else{
-			System.out.println("Falsch");
-			
-			return false;
-		}
-		
-		
-		
-		
-		
-	}
-	private void loseMessage() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void winMessage(Button btnAnswer1) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	
