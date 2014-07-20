@@ -87,34 +87,35 @@ public class Controller implements Initializable {
 			setImage(path);
 
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		btnAnswer1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 
-				if (checkResult(btnAnswer1)) {
+				if (checkResult(btnAnswer1, solution, sound)) {
 					generateAnswers();
 				}
 			}
 		});
 		btnAnswer2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer2)) {
+				if (checkResult(btnAnswer2, solution, sound)) {
 					generateAnswers();
 				}
 			}
 		});
 		btnAnswer3.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer3)) {
+				if (checkResult(btnAnswer3, solution, sound)) {
 					generateAnswers();
 				}
 			}
 		});
 		btnAnswer4.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer4)) {
+				if (checkResult(btnAnswer4, solution, sound)) {
 					generateAnswers();
 				}
 			}
@@ -149,11 +150,11 @@ public class Controller implements Initializable {
 		return entries;
 	}
 
-	private boolean checkResult(Button btnAnswer) {
-		System.out.println(solution);
+	private boolean checkResult(Button btnAnswer, String solution, String sound) {
+		System.out.println("sound in check= " + sound);
 		if (btnAnswer.getText().toUpperCase().equals(solution)) {
 			// System.out.println("Korrekt");
-			winMessage(btnAnswer);
+			winMessage(btnAnswer, sound);
 			return true;
 		} else {
 			// System.out.println("Falsch");
@@ -169,20 +170,21 @@ public class Controller implements Initializable {
 
 	}
 
-	private void winMessage(Button btnAnswer) {
+	private void winMessage(Button btnAnswer, String sound) {
 		btnAnswer.getStyleClass().add("buttonGreen");
-		if (sound != null) {
+		System.out.println("String sound= " +sound);
+		if(sound != null){
 			try {
 				aMan.play(sound);
 			} catch (NoSoundAvailableException e) {
-				e.printStackTrace();
+				// TODO Auto-generated catch block
+				 e.printStackTrace();
 			}
-
+			
 		}
 
 	}
 
-	@SuppressWarnings("unused")
 	private void waitUntilNext(int sleepTime) {
 
 		try {

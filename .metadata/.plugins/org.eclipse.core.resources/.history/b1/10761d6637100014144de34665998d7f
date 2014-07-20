@@ -182,7 +182,6 @@ public class Controller implements Initializable {
 
 	}
 
-	@SuppressWarnings("unused")
 	private void waitUntilNext(int sleepTime) {
 
 		try {
