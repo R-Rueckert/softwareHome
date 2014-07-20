@@ -1,0 +1,15 @@
+package de.rjr910.tests;
+
+import de.rjr910.audio.AudioManager;
+
+public class AudioTest {
+
+	public static void main(String[] args) {
+
+		String sound = null;
+		sound.getClass().getResource("elefant.mp3").toString();
+		
+		new AudioManager(sound);
+	}
+
+}

@@ -1,0 +1,14 @@
+package de.rjr910.tests;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+
+import de.rjr910.audio.AudioManager;
+
+public class AudioTest {
+
+	public static void main(String[] args) {
+
+	
+
+}

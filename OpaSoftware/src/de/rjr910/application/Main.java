@@ -1,6 +1,5 @@
 package de.rjr910.application;
 	
-import de.rjr910.database.DatabaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,0 +1,5 @@
+package de.rjr910.application;
+
+public class JavaFXInitializer {
+
+}
