@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
 <fullyQualifiedTypeName name="javafx.scene.Parent"/>
 <fullyQualifiedTypeName name="java.awt.Button"/>
-<fullyQualifiedTypeName name="javafx.scene.control.Label"/>
 <fullyQualifiedTypeName name="javafx.fxml.FXML"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="de.rjr910.database.DatabaseManager"/>
@@ -27,4 +26,20 @@
 <fullyQualifiedTypeName name="javafx.scene.control.Button"/>
 <fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
 <fullyQualifiedTypeName name="javafx.scene.layout.Background"/>
+<fullyQualifiedTypeName name="javax.sound.sampled.AudioInputStream"/>
+<fullyQualifiedTypeName name="javax.sound.sampled.AudioSystem"/>
+<fullyQualifiedTypeName name="javafx.application.Application"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="javafx.scene.media.Media"/>
+<fullyQualifiedTypeName name="de.rjr910.audio.AudioManager"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Label"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javafx.scene.input.MouseEvent"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="javafx.geometry.Rectangle2D"/>
+<fullyQualifiedTypeName name="javafx.stage.Screen"/>
+<fullyQualifiedTypeName name="javafx.scene.media.MediaPlayer"/>
+<fullyQualifiedTypeName name="javafx.scene.media.MediaPlayer.Status"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
 </qualifiedTypeNameHistroy>

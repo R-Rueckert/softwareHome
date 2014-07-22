@@ -1,0 +1,36 @@
+package de.rjr910.application;
+	
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+
+
+public class Main extends Application {
+	public void start(Stage primaryStage) {
+		try {
+			Parent root = (Parent) FXMLLoader.load(getClass().getResource("/de/rjr910/application/Menu.fxml"));
+//			Scene scene = new Scene(root);
+			Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+			Scene scene = new Scene(root, screenBounds.getWidth(), screenBounds.getHeight());
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setTitle("Lebenslanges Lernen");
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			primaryStage.setMaximized(true);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		launch(args);
+		
+		
+	}
+}

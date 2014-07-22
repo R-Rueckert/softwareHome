@@ -1,0 +1,36 @@
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-size: 20px;
+    /*-fx-font-weight: bold;*/
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-spacing: 8;
+    
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+.buttonGreen {
+    -fx-font: 16px "Serif";
+    -fx-background-color: #00FF00;
+}
+
+.buttonRed {
+    -fx-background-color: #FF0000;
+}
+.buttonRed:hover {
+    -fx-background-color: #FF0000;
+}
+.imageHolder{
+	-fx-border-color: #000000;
+	-fx-border-radius: 5px;
+	-fx-border-style: solid;
+	-fx-border-width: 2px;
+	-fx-padding: 10;
+}
+
+.hide{
+	visibility: hidden;
+}

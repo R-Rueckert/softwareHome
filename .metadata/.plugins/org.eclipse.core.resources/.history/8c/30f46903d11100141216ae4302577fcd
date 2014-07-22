@@ -1,0 +1,23 @@
+package de.rjr910.games;
+
+import java.util.Random;
+
+import javafx.scene.control.Label;
+
+public class MathGame {
+
+	public MathGame(Label aufgabe) {
+
+		aufgabe.setText(generatedMathQuestion());
+	}
+
+	private String generatedMathQuestion() {
+		Random rand1 = new Random();
+		Random rand2 = new Random();
+		
+		
+		
+		return rand1 + " + " + rand2 + " = ";
+	}
+
+}
