@@ -1,0 +1,12 @@
+07-16 21:38:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "DEUTSCH" nicht gefunden
+Table "DEUTSCH" not found; SQL statement:
+SELECT * FROM DEUTSCH [42102-180]
+07-16 21:39:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "DEUTSCH" nicht gefunden
+Table "DEUTSCH" not found; SQL statement:
+SELECT * FROM DEUTSCH [42102-180]
+07-16 21:40:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "DEUTSCH" nicht gefunden
+Table "DEUTSCH" not found; SQL statement:
+SELECT * FROM DEUTSCH [42102-180]

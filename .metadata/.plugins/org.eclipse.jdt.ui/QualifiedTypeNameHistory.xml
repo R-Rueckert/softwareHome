@@ -42,4 +42,9 @@
 <fullyQualifiedTypeName name="javafx.scene.media.MediaPlayer"/>
 <fullyQualifiedTypeName name="javafx.scene.media.MediaPlayer.Status"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="de.rjr910.games.Words"/>
+<fullyQualifiedTypeName name="javafx.fxml.Initializable"/>
+<fullyQualifiedTypeName name="de.rjr910.games.WordGame"/>
+<fullyQualifiedTypeName name="de.rjr910.games.MathGame"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>

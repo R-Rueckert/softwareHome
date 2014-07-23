@@ -1,0 +1,178 @@
+07-16 21:23:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Unbekannter Datentyp: "("
+Unknown data type: "("; SQL statement:
+CREATE Table deutsch(ID INT Primary KEY, IMAGEPATH VARCHAR(255),ANSWER1 VARCHAR(25),ANSWER2 VARCHAR(25),ANSWER3 VARCHAR(25),ANSWER4 VARCHAR(25),SOLUTION () ) [50004-180]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3962)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3825)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5722)
+	at org.h2.command.Parser.parseCreate(Parser.java:4121)
+	at org.h2.command.Parser.parsePrepared(Parser.java:350)
+	at org.h2.command.Parser.parse(Parser.java:305)
+	at org.h2.command.Parser.parse(Parser.java:277)
+	at org.h2.command.Parser.prepareCommand(Parser.java:242)
+	at org.h2.engine.Session.prepareLocal(Session.java:446)
+	at org.h2.engine.Session.prepareCommand(Session.java:388)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:171)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:159)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1390)
+	at org.h2.server.web.WebApp.query(WebApp.java:1063)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1025)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1012)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+07-17 20:29:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-17 20:30:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-18 19:49:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "ALTER TABLE DEUTSCH
+DROP SOLUTION INT[*] "
+Syntax error in SQL statement "ALTER TABLE DEUTSCH
+DROP SOLUTION INT[*] "; SQL statement:
+ALTER TABLE deutsch
+DROP Solution int [42000-180]
+07-18 20:27:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Das Objekt wurde bereits geschlossen
+The object is already closed [90007-180]
+07-18 20:29:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-18 20:31:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Das Objekt wurde bereits geschlossen
+The object is already closed [90007-180]
+07-18 20:35:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "SELECT NVL(MAX(ID),0) MAX_ID FROMDEUTSCH[*] "
+Syntax error in SQL statement "SELECT NVL(MAX(ID),0) MAX_ID FROMDEUTSCH[*] "; SQL statement:
+select nvl(max(id),0) max_id fromDeutsch [42000-180]
+07-18 21:28:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-18 21:56:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-18 22:03:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-20 06:52:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-20 15:24:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-20 15:26:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-20 15:33:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-20 15:37:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "ALTER DEUTSCH[*] ADD IDS AUTO_INCREMENT "; erwartet "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"
+Syntax error in SQL statement "ALTER DEUTSCH[*] ADD IDS AUTO_INCREMENT "; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"; SQL statement:
+ALTER DEUTSCH ADD IDs AUTO_increment [42001-180]
+07-20 15:38:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Unbekannter Datentyp: "AUTO_INCREMENT"
+Unknown data type: "AUTO_INCREMENT"; SQL statement:
+ALTER TABLE DEUTSCH ADD IDs AUTO_increment [50004-180]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3962)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3825)
+	at org.h2.command.Parser.parseAlterTableAddColumn(Parser.java:5480)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:5273)
+	at org.h2.command.Parser.parseAlter(Parser.java:4688)
+	at org.h2.command.Parser.parsePrepared(Parser.java:332)
+	at org.h2.command.Parser.parse(Parser.java:305)
+	at org.h2.command.Parser.parse(Parser.java:277)
+	at org.h2.command.Parser.prepareCommand(Parser.java:242)
+	at org.h2.engine.Session.prepareLocal(Session.java:446)
+	at org.h2.engine.Session.prepareCommand(Session.java:388)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:171)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:159)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1390)
+	at org.h2.server.web.WebApp.query(WebApp.java:1063)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1025)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1012)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+07-20 15:39:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "ALTER TABLE DEUTSCH ADD IDS INT AUTO_INCEMENT[*] "
+Syntax error in SQL statement "ALTER TABLE DEUTSCH ADD IDS INT AUTO_INCEMENT[*] "; SQL statement:
+ALTER TABLE DEUTSCH ADD IDs int AUTO_INCEMENT [42000-180]
+07-20 15:40:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Unbekannter Datentyp: "AUTO_INCREMENT"
+Unknown data type: "AUTO_INCREMENT"; SQL statement:
+ALTER TABLE DEUTSCH ADD IDs auto_increment [50004-180]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:3962)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3825)
+	at org.h2.command.Parser.parseAlterTableAddColumn(Parser.java:5480)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:5273)
+	at org.h2.command.Parser.parseAlter(Parser.java:4688)
+	at org.h2.command.Parser.parsePrepared(Parser.java:332)
+	at org.h2.command.Parser.parse(Parser.java:305)
+	at org.h2.command.Parser.parse(Parser.java:277)
+	at org.h2.command.Parser.prepareCommand(Parser.java:242)
+	at org.h2.engine.Session.prepareLocal(Session.java:446)
+	at org.h2.engine.Session.prepareCommand(Session.java:388)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:171)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:159)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1390)
+	at org.h2.server.web.WebApp.query(WebApp.java:1063)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1025)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1012)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+07-20 15:43:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "ALTER TABLE DEUTSCH ADD ID BIGINT AUTOINCREMENT[*] "
+Syntax error in SQL statement "ALTER TABLE DEUTSCH ADD ID BIGINT AUTOINCREMENT[*] "; SQL statement:
+ALTER TABLE Deutsch ADD ID bigint autoincrement [42000-180]
+07-20 15:45:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Keine Daten verfügbar
+No data is available [2000-180]
+07-20 15:56:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Feld "DE" nicht gefunden
+Column "DE" not found; SQL statement:
+UPDATE DEUTSCH 
+SET AUDIOPATH=src/de/rjr910/audio/files/elefant.mp3
+WHERE  AUDIOPATH=de/rjr910/audio/files/elefant.mp3 [42122-180]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Operation.optimize(Operation.java:181)
+	at org.h2.expression.Operation.optimize(Operation.java:181)
+	at org.h2.expression.Operation.optimize(Operation.java:181)
+	at org.h2.expression.Operation.optimize(Operation.java:181)
+	at org.h2.expression.Comparison.optimize(Comparison.java:180)
+	at org.h2.command.dml.Update.prepare(Update.java:181)
+	at org.h2.command.Parser.prepareCommand(Parser.java:247)
+	at org.h2.engine.Session.prepareLocal(Session.java:446)
+	at org.h2.engine.Session.prepareCommand(Session.java:388)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:171)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:159)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1390)
+	at org.h2.server.web.WebApp.query(WebApp.java:1063)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1025)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1012)
+	at org.h2.server.web.WebThread.process(WebThread.java:167)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+07-20 19:37:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax Fehler in SQL Befehl "UPDATE DEUTSCH AUDIOPATH =[*] 'src/de/rjr910/audio/files/apfel.mp3' WHERE ID = 1 "; erwartet "SET"
+Syntax error in SQL statement "UPDATE DEUTSCH AUDIOPATH =[*] 'src/de/rjr910/audio/files/apfel.mp3' WHERE ID = 1 "; expected "SET"; SQL statement:
+UPDATE Deutsch AUDIOPATH = 'src/de/rjr910/audio/files/apfel.mp3' WHERE ID = 1 [42001-180]
