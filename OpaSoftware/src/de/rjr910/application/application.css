@@ -32,6 +32,13 @@
 	
 
 }
+.aufgabe{
+	-fx-font-size: 60px;
+	-fx-font-weight: bold;
+}
+.answer{
+	-fx-font-size:90px;
+}
 
 .hide{
 	visibility: hidden;
