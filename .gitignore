@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -34,3 +35,18 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+.metadata/.plugins/org.eclipse.core.resources/.history/2/2061236a5c13001414e1e31ed18b67d1
+.metadata/.plugins/org.eclipse.core.resources/.history/34/20ee839f5c13001414e1e31ed18b67d1
+.metadata/.plugins/org.eclipse.core.resources/.history/3c/f08a7b855d13001414e1e31ed18b67d1
+.metadata/.plugins/org.eclipse.core.resources/.history/41/905a508d5c13001414e1e31ed18b67d1
+.metadata/.plugins/org.eclipse.core.resources/.history/4a/
+.metadata/*
+.metadata/.plugins/*
+.plugins/*
+*.class
+*.index
+*.snap
+*.resources
+*.xmi
+*.class
