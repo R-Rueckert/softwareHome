@@ -50,8 +50,8 @@ public class Controller implements Initializable {
 		WordGame words = new WordGame(image,btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4,txtMessage);
 		words.init();
 		
-		MathGame math = new MathGame(aufgabe,solution);
-		math.init();
+//		MathGame math = new MathGame(aufgabe,solution);
+//		math.init();
 			
 		
 
