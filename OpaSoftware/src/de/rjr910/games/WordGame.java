@@ -111,7 +111,7 @@ public class WordGame {
 
 		btnAnswer1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer1)) {
+				if (checkResult(btnAnswer1) && aMan.getAudioPlayed()) {
 //					waitUntilNext(5000);
 					generateAnswers();
 				}
@@ -119,25 +119,25 @@ public class WordGame {
 		});
 		btnAnswer2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer2)) {
+				if (checkResult(btnAnswer2) && aMan.getAudioPlayed()) {
 //					waitUntilNext(5000);
-					generateAnswers();
+//					generateAnswers();
 				}
 			}
 		});
 		btnAnswer3.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer3)) {
+				if (checkResult(btnAnswer3)&& aMan.getAudioPlayed()) {
 //					waitUntilNext(5000);
-					generateAnswers();
+//					generateAnswers();
 				}
 			}
 		});
 		btnAnswer4.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer4)) {
+				if (checkResult(btnAnswer4) && aMan.getAudioPlayed()) {
 //					waitUntilNext(5000);
-					generateAnswers();
+//					generateAnswers();
 				}
 			}
 		});
