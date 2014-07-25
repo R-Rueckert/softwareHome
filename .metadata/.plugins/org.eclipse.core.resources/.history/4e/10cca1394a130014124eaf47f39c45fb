@@ -1,0 +1,14 @@
+package de.rjr910.audio;
+
+import javafx.event.Event;
+
+public class MyHandler implements  javafx.event.EventHandler{
+
+	@Override
+	public void handle(Event arg0) {
+
+		
+		System.out.println("Es passiert was");
+	}
+
+}
