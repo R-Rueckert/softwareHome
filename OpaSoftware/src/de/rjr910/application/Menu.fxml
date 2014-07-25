@@ -55,17 +55,17 @@
                   <children>
                     <Label fx:id="aufgabe" prefHeight="220.0" prefWidth="574.0" text="Label" textAlignment="CENTER" textOverrun="ELLIPSIS" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
                       <font>
-                        <Font name="System Bold" size="90.0" />
+                        <Font name="System Bold" size="75.0" />
                       </font>
                       <GridPane.margin>
                         <Insets left="50.0" />
                       </GridPane.margin>
                     </Label>
-                    <TextField fx:id="solution" prefHeight="220.0" prefWidth="286.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <TextField id="solution" prefHeight="220.0" prefWidth="316.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   </children>
                   <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="974.0" minWidth="10.0" prefWidth="625.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="424.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="974.0" minWidth="10.0" prefWidth="733.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="316.0" />
                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="151.0" />
                   </columnConstraints>
                   <rowConstraints>

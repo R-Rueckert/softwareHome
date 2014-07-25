@@ -1,37 +1,33 @@
-package de.rjr910.games;
+package de.rjr910.controller;
 
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import de.rjr910.audio.AudioManager;
 import de.rjr910.audio.NoSoundAvailableException;
 import de.rjr910.database.DatabaseManager;
 
-public class WordGame {
-
-	private List<Button> btnList = new ArrayList<Button>();
-	@FXML
-	private Button btnAnswer1;
-	@FXML
-	private Button btnAnswer2;
-	@FXML
-	private Button btnAnswer3;
-	@FXML
-	private Button btnAnswer4;
+public class Controller implements Initializable {
 
 	@FXML
-	private Label txtMessage;
+	private Button btnAnswer1 = new Button();
+	@FXML
+	private Button btnAnswer2 = new Button();
+	@FXML
+	private Button btnAnswer3 = new Button();
+	@FXML
+	private Button btnAnswer4 = new Button();
 	DatabaseManager dbMan = new DatabaseManager();
 	Connection conn = dbMan.getConnection();
 	Statement stmt;
@@ -40,30 +36,15 @@ public class WordGame {
 	@FXML
 	private ImageView image;
 	private AudioManager aMan = new AudioManager();
-	
-	public WordGame(ImageView image,Button btnAnswer1,Button btnAnswer2, Button btnAnswer3,Button btnAnswer4,Label txtMessage){
-		this.btnAnswer1 = btnAnswer1;
-		this.btnAnswer2 = btnAnswer2;
-		this.btnAnswer3 = btnAnswer3;
-		this.btnAnswer4 = btnAnswer4;
-		this.image = image;
-		this.txtMessage = txtMessage;
-		
-	}
 
-
-	public void init(){
-		btnList.add(btnAnswer1);
-		btnList.add(btnAnswer2);
-		btnList.add(btnAnswer3);
-		btnList.add(btnAnswer4);
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		generateAnswers();
+
 	}
-	
+
 	private void setImage(String path) {
 		Image img = new Image(path);
 		this.image.setImage(img);
-		image.getStyleClass().add("imageDeutsch");
 	}
 
 	private Statement getStatement() throws SQLException {
@@ -77,13 +58,14 @@ public class WordGame {
 		ResultSet rs;
 		int maxEntries = getMaxEntries("Deutsch");
 		int entry = getRandomNumber(maxEntries);
-
-		for (Button b : btnList) {
-			b.getStyleClass().remove("buttonRed");
-			b.getStyleClass().remove("buttonGreen");
-			b.getStyleClass().remove("hide");
-
-		}
+		this.btnAnswer1.getStyleClass().remove("buttonRed");
+		this.btnAnswer1.getStyleClass().remove("buttonGreen");
+		this.btnAnswer2.getStyleClass().remove("buttonRed");
+		this.btnAnswer2.getStyleClass().remove("buttonGreen");
+		this.btnAnswer3.getStyleClass().remove("buttonRed");
+		this.btnAnswer3.getStyleClass().remove("buttonGreen");
+		this.btnAnswer4.getStyleClass().remove("buttonRed");
+		this.btnAnswer4.getStyleClass().remove("buttonGreen");
 
 		try {
 			stmt = getStatement();
@@ -101,34 +83,35 @@ public class WordGame {
 			solution = rs.getString("SOLUTION").toUpperCase();
 			String path = rs.getString("IMAGEPATH");
 			sound = rs.getString("AUDIOPATH");
-			// System.out.println(sound);
+			System.out.println(sound);
 			setImage(path);
-			
 
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		btnAnswer1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer1)) {
-//					waitUntilNext(5000);
+
+				if (checkResult(btnAnswer1, solution, sound)) {
+					waitUntilNext(1000);
 					generateAnswers();
 				}
 			}
 		});
 		btnAnswer2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer2)) {
-//					waitUntilNext(5000);
+				if (checkResult(btnAnswer2, solution, sound)) {
+					waitUntilNext(1000);
 					generateAnswers();
 				}
 			}
 		});
 		btnAnswer3.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer3)) {
-//					waitUntilNext(5000);
+				if (checkResult(btnAnswer3, solution, sound)) {
+					waitUntilNext(1000);
 					generateAnswers();
 				}
 			}
@@ -136,7 +119,7 @@ public class WordGame {
 		btnAnswer4.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if (checkResult(btnAnswer4)) {
-//					waitUntilNext(5000);
+					waitUntilNext(1000);
 					generateAnswers();
 				}
 			}
@@ -193,24 +176,18 @@ public class WordGame {
 
 	private void winMessage(Button btnAnswer) {
 		btnAnswer.getStyleClass().add("buttonGreen");
-		showMessage(btnAnswer);
-		try {
-			aMan.play(sound);
-//			aMan.holdUntilAudioStopped();
-		} catch (NoSoundAvailableException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(sound != null){
+			try {
+				aMan.play(sound);
+			} catch (NoSoundAvailableException e) {
+				// TODO Auto-generated catch block
+				 e.printStackTrace();
+			}
+			
 		}
+
 	}
 
-	private void showMessage(Button btnAnswer) {
-		txtMessage.setText(btnAnswer.getText());
-		for (Button b : btnList) {
-			b.getStyleClass().add("hide");
-		}
-	}
-
-	@SuppressWarnings("unused")
 	private void waitUntilNext(int sleepTime) {
 
 		try {
@@ -220,5 +197,4 @@ public class WordGame {
 		}
 	}
 
-	
 }
