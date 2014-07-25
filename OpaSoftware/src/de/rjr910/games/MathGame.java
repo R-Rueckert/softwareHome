@@ -35,7 +35,7 @@ public class MathGame {
 	private boolean checkResult() {
 		
 		
-		if(mathSolution < 10){
+		if(mathSolution < 10 && mathSolution >0){
 			if(mathSolution == Integer.parseInt(inputSolution.getText())){
 				System.out.println("True");
 				return true;
@@ -50,13 +50,19 @@ public class MathGame {
 		
 	}
 
+
+
 	private String generateMathQuestion(int low, int high) {
 		String operator = chooseOperator();
 		int rand1 = generateRandom(low, high);
 		int rand2 = generateRandom(low, high);
 		int mathSolution = calculateSolution(rand1,rand2,operator);
+		if(rand1 > rand2){
+			return rand1+ " " + operator +" "+ rand2 + " = ";
+		}else{
+			return rand2+ " " + operator +" "+ rand1 + " = ";
+		}
 		
-		return rand1+ " " + operator +" "+ rand2 + " = ";
 		
 		
 	}
@@ -83,7 +89,7 @@ public class MathGame {
 		case "+":
 			return a + b;
 		case "-":
-			return a -b;
+			return a - b;
 		case ":":
 			return a/b;
 		case "x":

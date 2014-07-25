@@ -12,11 +12,16 @@ public class AudioTest2 extends Application {
 			String sound = "src/de/rjr910/audio/files/elefant.mp3";
 			AudioManager aMan = new AudioManager();
 			try {
-				aMan.play(sound);
+				if(aMan.play(sound)){
+					System.out.println("läuft");
+				}
 			} catch (NoSoundAvailableException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+
+			
 	}
 
 	public static void main(String[] args) {

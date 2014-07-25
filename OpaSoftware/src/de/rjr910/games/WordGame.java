@@ -15,10 +15,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import de.rjr910.audio.AudioManager;
+import de.rjr910.audio.CallBackStopped;
 import de.rjr910.audio.NoSoundAvailableException;
 import de.rjr910.database.DatabaseManager;
 
-public class WordGame {
+public class WordGame implements CallBackStopped{
 
 	private List<Button> btnList = new ArrayList<Button>();
 	@FXML
@@ -73,7 +74,7 @@ public class WordGame {
 
 	}
 
-	private void generateAnswers() {
+	public void generateAnswers() {
 		ResultSet rs;
 		int maxEntries = getMaxEntries("Deutsch");
 		int entry = getRandomNumber(maxEntries);
@@ -113,7 +114,7 @@ public class WordGame {
 			public void handle(ActionEvent event) {
 				if (checkResult(btnAnswer1)) {
 //					waitUntilNext(5000);
-					generateAnswers();
+//					generateAnswers();
 				}
 			}
 		});
@@ -121,7 +122,7 @@ public class WordGame {
 			public void handle(ActionEvent event) {
 				if (checkResult(btnAnswer2)) {
 //					waitUntilNext(5000);
-					generateAnswers();
+//					generateAnswers();
 				}
 			}
 		});
@@ -129,7 +130,7 @@ public class WordGame {
 			public void handle(ActionEvent event) {
 				if (checkResult(btnAnswer3)) {
 //					waitUntilNext(5000);
-					generateAnswers();
+//					generateAnswers();
 				}
 			}
 		});
@@ -137,7 +138,7 @@ public class WordGame {
 			public void handle(ActionEvent event) {
 				if (checkResult(btnAnswer4)) {
 //					waitUntilNext(5000);
-					generateAnswers();
+//					generateAnswers();
 				}
 			}
 		});
@@ -195,7 +196,7 @@ public class WordGame {
 		btnAnswer.getStyleClass().add("buttonGreen");
 		showMessage(btnAnswer);
 		try {
-			aMan.play(sound);
+			aMan.play(sound,this);
 //			aMan.holdUntilAudioStopped();
 		} catch (NoSoundAvailableException e) {
 			// TODO Auto-generated catch block
@@ -218,6 +219,12 @@ public class WordGame {
 		} catch (InterruptedException ex) {
 			Thread.currentThread().interrupt();
 		}
+	}
+
+
+	@Override
+	public void stopped() {
+		generateAnswers();	
 	}
 
 	

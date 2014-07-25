@@ -1,0 +1,11 @@
+package de.rjr910.audio;
+
+public class AudioStoppedHandler implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

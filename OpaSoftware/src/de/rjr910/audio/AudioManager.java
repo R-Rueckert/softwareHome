@@ -7,14 +7,22 @@ import javafx.scene.media.MediaPlayer;
 
 public class AudioManager {
 
-	Media hit;
-	MediaPlayer mediaPlayer;
+	private Media hit;
+	private MediaPlayer mediaPlayer;
+	private boolean audioPlayed = false;
 
-	public void play(String sound) throws NoSoundAvailableException {
+	public boolean play(String sound, CallBackStopped c) throws NoSoundAvailableException {
 
 		this.hit = new Media(new File(sound).toURI().toString());
 		this.mediaPlayer = new MediaPlayer(hit);
 		mediaPlayer.play();
+		
+		
+		AudioStoppedHandler handler = new AudioStoppedHandler(c);
+		
+		mediaPlayer.setOnEndOfMedia(handler);
+		
+		return audioPlayed;
 	
 			
 //		while(mediaPlayer.onEndOfMediaProperty() != null){
@@ -26,6 +34,17 @@ public class AudioManager {
 //		}
 
 	}
+	
+	public boolean isAudioPlayed(){
+		return audioPlayed;
+	}
+
+	public void mediaStopped() {
+
+		System.out.println("hier kann ich das stopped jetzt behandeln und das nächste Bild jetzt erst anzeigen");
+		
+	}
+	
 	
 
 }
