@@ -1,101 +1,115 @@
 package de.rjr910.games;
 
-import javafx.event.Event;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import de.rjr910.audio.CallBackStopped;
+import de.rjr910.games.utilitiesMath.MathHandler;
 
-public class MathGame {
+public class MathGame implements CallBackStopped {
 
 	private Label generatedQuestion;
 	private TextField inputSolution;
 	private int mathSolution;
-	int count= 0;
-	
-	public MathGame(Label aufgabe, TextField solution) {
+	private MathHandler myMathHandler;
+	private Button btnNewMath;
+	int count = 0;
+	private Label response;
+
+	public MathGame(Label aufgabe, TextField solution, Label mathResponse,
+			Button btnNewMath) {
 		this.generatedQuestion = aufgabe;
 		this.inputSolution = solution;
-		inputSolution.setOnKeyReleased(new EventHandler<Event>() {
-			
-			@Override
-			public void handle(Event event) {
-				count++;
-				if(mathSolution < 10 && count <2){
-					checkResult();
-				}
-			}
-		});
-	}
-	
-	public void init(){
-		generatedQuestion.setText(generateMathQuestion(1,20));
-		checkResult();
+		this.response = mathResponse;
+		this.btnNewMath = btnNewMath;
+
 	}
 
-	private boolean checkResult() {
-		
-		
-		if(mathSolution < 10 && mathSolution >0){
-			if(mathSolution == Integer.parseInt(inputSolution.getText())){
-				System.out.println("True");
-				return true;
-			}else{
-				return false;
+	public void init() {
+		btnNewMath.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				System.out.println("Neue Aufgabe gefordert");
+				generatedQuestion.setText(generateMathQuestion(1, 20));
+
 			}
-		}else{
+		});
+		generatedQuestion.setText(generateMathQuestion(1, 20));
+		myMathHandler = new MathHandler(this);
+		inputSolution.setOnKeyReleased(myMathHandler);
+
+//		checkResult();
+	}
+
+	public boolean checkResult() {
+
+		System.out.println("get Count"+myMathHandler.getCount());
+		System.out.println("Errechnete Lösung = " + mathSolution);
+		if (mathSolution < 10) {
+			System.out.println("Eingegebene Lösung = "+ inputSolution.getText());
+			if (mathSolution == Integer.parseInt(inputSolution.getText())) {
+				System.out.println("Korrekt Einstellig");
+				return true;
+			}
+		}else if(mathSolution>=10){
+			System.out.println("Eingegebene Lösung = "+ inputSolution.getText());
+			if (mathSolution == Integer.parseInt(inputSolution.getText())) {
+				System.out.println("Korrekt Zweistellig");
+				return true;
+			}
 			
 		}
 		return false;
-		// TODO Auto-generated method stub
-		
 	}
-
-
 
 	private String generateMathQuestion(int low, int high) {
 		String operator = chooseOperator();
+		inputSolution.setText("");
+		response.setText("");
 		int rand1 = generateRandom(low, high);
 		int rand2 = generateRandom(low, high);
-		int mathSolution = calculateSolution(rand1,rand2,operator);
-		if(rand1 > rand2){
-			return rand1+ " " + operator +" "+ rand2 + " = ";
-		}else{
-			return rand2+ " " + operator +" "+ rand1 + " = ";
+		if (rand1 > rand2) {
+			mathSolution = calculateSolution(rand1, rand2, operator);
+			return rand1 + " " + operator + " " + rand2 + " = ";
+		} else {
+			mathSolution = calculateSolution(rand2, rand1, operator);
+			return rand2 + " " + operator + " " + rand1 + " = ";
 		}
-		
-		
-		
+
 	}
-	
+
 	private String chooseOperator() {
 
-		int rand = generateRandom(1,2);
-		switch(rand){
-			case 1: 
-				return "+";
-			case 2:
-				return "-";
-			case 3:
-				return ":";
-			case 4:
-				return "x";
+		int rand = generateRandom(1, 2);
+		switch (rand) {
+		case 1:
+			return "+";
+		case 2:
+			return "-";
+		case 3:
+			return ":";
+		case 4:
+			return "x";
 		}
 		return null;
 	}
 
 	private int calculateSolution(int a, int b, String op) {
 
-		switch(op){
+		switch (op) {
 		case "+":
 			return a + b;
 		case "-":
 			return a - b;
 		case ":":
-			return a/b;
+			return a / b;
 		case "x":
-			return a*b;
+			return a * b;
 		}
-		
+
 		return 0;
 	}
 
@@ -103,6 +117,16 @@ public class MathGame {
 		high++;
 		return (int) (Math.random() * (high - low) + low);
 	}
+
+	@Override
+	public void stopped() {
+		if(checkResult()){
+			response.setText("Ja");
+			this.init();
+		}
+		
+	}
+
 	
 
 }

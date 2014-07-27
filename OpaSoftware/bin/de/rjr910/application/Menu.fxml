@@ -11,9 +11,9 @@
 <?scenebuilder-background-color radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 100.0px 100.0px, radius 200.0px, 0xff0000ff 0.0%, 0x0000ffff 30.0%, 0x000000ff 100.0%)?>
 <?scenebuilder-stylesheet application.css?>
 
-<TabPane fx:id="gameTabPane" cache="true" cacheHint="SPEED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="true" prefHeight="742.0" prefWidth="1208.0000999999975" scaleX="1.0" scaleY="1.0" scaleZ="1.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="de.rjr910.controller.Controller">
+<TabPane fx:id="gameTabPane" cache="true" cacheHint="SPEED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false" prefHeight="742.0" prefWidth="1208.0000999999975" scaleX="1.0" scaleY="1.0" scaleZ="1.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="de.rjr910.controller.Controller">
   <tabs>
-    <Tab styleClass="tabDeutsch" text="Deutsch">
+    <Tab closable="true" styleClass="tabDeutsch" text="Deutsch">
       <content>
         <AnchorPane id="Content">
           <children>

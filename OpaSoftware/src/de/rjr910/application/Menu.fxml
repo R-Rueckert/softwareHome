@@ -8,77 +8,97 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
+<?scenebuilder-background-color radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 100.0px 100.0px, radius 200.0px, 0xff0000ff 0.0%, 0x0000ffff 30.0%, 0x000000ff 100.0%)?>
 <?scenebuilder-stylesheet application.css?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="de.rjr910.controller.Controller">
-  <children>
-    <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" scaleX="1.0" scaleY="1.0" scaleZ="1.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <tabs>
-        <Tab text="Deutsch">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+<TabPane fx:id="gameTabPane" cache="true" cacheHint="SPEED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false" prefHeight="742.0" prefWidth="1208.0000999999975" scaleX="1.0" scaleY="1.0" scaleZ="1.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="de.rjr910.controller.Controller">
+  <tabs>
+    <Tab closable="true" styleClass="tabDeutsch" text="Deutsch">
+      <content>
+        <AnchorPane id="Content">
+          <children>
+            <TilePane prefColumns="2" prefHeight="-1.0" prefRows="2" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
-                <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <HBox id="HBox" alignment="CENTER" minHeight="236.0" prefHeight="378.9999000000025" prefWidth="1186.0" spacing="5.0" TilePane.alignment="CENTER">
                   <children>
-                    <StackPane fx:id="ImageHolder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="193.0" prefWidth="892.0" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER">
-                      <children>
-                        <ImageView fx:id="image" fitHeight="189.75" fitWidth="253.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                      </children>
-                    </StackPane>
-                    <Pane id="posibleLetters" fx:id="posibleWords" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="177.625" prefWidth="927.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                      <children>
-                        <Label fx:id="txtMessage" layoutX="0.0" layoutY="0.0" prefHeight="162.0" prefWidth="586.0" text="" />
-                        <Button fx:id="btnAnswer1" cancelButton="false" defaultButton="true" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
-                        <Button fx:id="btnAnswer3" defaultButton="true" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
-                        <Button id="btnAnswer1" fx:id="btnAnswer2" defaultButton="true" layoutX="300.0" layoutY="15.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
-                        <Button fx:id="btnAnswer4" defaultButton="true" layoutX="300.0" layoutY="89.0" mnemonicParsing="false" prefHeight="73.9609375" prefWidth="286.0" text="" />
-                      </children>
-                    </Pane>
+                    <ImageView fx:id="image" fitHeight="330.75" fitWidth="441.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                   </children>
-                  <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0" />
-                  </columnConstraints>
-                  <rowConstraints>
-                    <RowConstraints maxHeight="193.0" minHeight="10.0" prefHeight="193.0" vgrow="SOMETIMES" />
-                    <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="176.0" vgrow="SOMETIMES" />
-                  </rowConstraints>
-                </GridPane>
-              </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-        <Tab text="Mathe">
-          <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <children>
-                <GridPane alignment="CENTER" prefHeight="769.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                </HBox>
+                <GridPane alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0" TilePane.alignment="TOP_LEFT">
                   <children>
-                    <Label fx:id="aufgabe" prefHeight="220.0" prefWidth="574.0" text="Label" textAlignment="CENTER" textOverrun="ELLIPSIS" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label fx:id="txtMessage" contentDisplay="CENTER" prefHeight="74.0" prefWidth="1157.0" styleClass="txtMessageWordGame" text="" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0">
                       <font>
-                        <Font name="System Bold" size="75.0" />
+                        <Font name="System Bold" size="80.0" />
                       </font>
-                      <GridPane.margin>
-                        <Insets left="50.0" />
-                      </GridPane.margin>
                     </Label>
-                    <TextField id="solution" prefHeight="220.0" prefWidth="316.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <VBox alignment="TOP_RIGHT" fillWidth="true" prefHeight="-1.0" prefWidth="-1.0" spacing="40.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <children>
+                        <Button fx:id="btnAnswer4" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="89.0" prefWidth="574.0" text="" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+                        <Button fx:id="btnAnswer3" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="89.0" prefWidth="574.0" text="" textAlignment="CENTER" />
+                      </children>
+                    </VBox>
+                    <VBox alignment="TOP_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="40.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                      <children>
+                        <Button id="btnAnswer1" fx:id="btnAnswer2" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="89.0" prefWidth="574.0" text="" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+                        <Button fx:id="btnAnswer1" alignment="CENTER" cancelButton="false" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="89.0" prefWidth="574.0" text="" textAlignment="CENTER" />
+                      </children>
+                    </VBox>
                   </children>
                   <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="974.0" minWidth="10.0" prefWidth="733.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="316.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="151.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
                   </columnConstraints>
                   <rowConstraints>
-                    <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
-                    <RowConstraints maxHeight="487.0" minHeight="-Infinity" prefHeight="487.0" valignment="CENTER" vgrow="ALWAYS" />
-                    <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="168.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="269.0" minHeight="10.0" prefHeight="269.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
                   </rowConstraints>
+                  <TilePane.margin>
+                    <Insets left="20.0" />
+                  </TilePane.margin>
                 </GridPane>
               </children>
-            </AnchorPane>
-          </content>
-        </Tab>
-      </tabs>
-    </TabPane>
-  </children>
-</AnchorPane>
+            </TilePane>
+          </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Mathe">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+          <children>
+            <GridPane alignment="CENTER" prefHeight="769.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Label fx:id="aufgabe" alignment="CENTER" prefHeight="220.0" prefWidth="574.0" text="Label" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                  <font>
+                    <Font name="System Bold" size="90.0" />
+                  </font>
+                  <GridPane.margin>
+                    <Insets left="50.0" />
+                  </GridPane.margin>
+                </Label>
+                <TextField fx:id="solution" prefHeight="220.0" prefWidth="316.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label fx:id="mathResponse" alignment="CENTER" prefHeight="213.0" prefWidth="137.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <font>
+                    <Font size="60.0" />
+                  </font>
+                </Label>
+                <Button fx:id="btnNewMath" mnemonicParsing="false" prefHeight="46.0" prefWidth="151.0" text="Neue Aufgabe" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="974.0" minWidth="10.0" prefWidth="733.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="316.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="151.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="487.0" minHeight="-Infinity" prefHeight="487.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="168.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

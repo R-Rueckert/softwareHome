@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import de.rjr910.games.MathGame;
 import de.rjr910.games.WordGame;
@@ -29,13 +31,20 @@ public class Controller implements Initializable {
 	@FXML
 	private ImageView image;
 	@FXML
-	private NumFieldFX solution = new NumFieldFX();
+	private TextField solution = new TextField();
+	@FXML
+	private Label mathResponse = new Label();
+	@FXML
+	private Button btnNewMath = new Button();
+	@FXML
+	private TabPane gameTabPane = new TabPane();
+
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		WordGame words = new WordGame(image,btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4,txtMessage);
 		words.init();
 		
-		MathGame math = new MathGame(aufgabe,solution);
+		MathGame math = new MathGame(aufgabe,solution,mathResponse,btnNewMath);
 		math.init();
 			
 		

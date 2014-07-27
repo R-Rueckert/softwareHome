@@ -9,9 +9,8 @@ public class AudioManager {
 
 	private Media hit;
 	private MediaPlayer mediaPlayer;
-	private boolean audioPlayed = false;
 
-	public boolean play(String sound, CallBackStopped c) throws NoSoundAvailableException {
+	public void play(String sound, CallBackStopped c) throws NoSoundAvailableException {
 
 		this.hit = new Media(new File(sound).toURI().toString());
 		this.mediaPlayer = new MediaPlayer(hit);
@@ -22,7 +21,6 @@ public class AudioManager {
 		
 		mediaPlayer.setOnEndOfMedia(handler);
 		
-		return audioPlayed;
 	
 			
 //		while(mediaPlayer.onEndOfMediaProperty() != null){
@@ -35,9 +33,6 @@ public class AudioManager {
 
 	}
 	
-	public boolean isAudioPlayed(){
-		return audioPlayed;
-	}
 
 	public void mediaStopped() {
 

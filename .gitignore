@@ -37,3 +37,6 @@ Icon
 
 .metadata/*
 *.class
+*.log
+*.index
+*.markers

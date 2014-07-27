@@ -83,8 +83,8 @@ public class WordGame implements CallBackStopped{
 			b.getStyleClass().remove("buttonRed");
 			b.getStyleClass().remove("buttonGreen");
 			b.getStyleClass().remove("hide");
-
 		}
+		
 
 		try {
 			stmt = getStatement();
@@ -102,8 +102,8 @@ public class WordGame implements CallBackStopped{
 			solution = rs.getString("SOLUTION").toUpperCase();
 			String path = rs.getString("IMAGEPATH");
 			sound = rs.getString("AUDIOPATH");
-			// System.out.println(sound);
 			setImage(path);
+			txtMessage.getStyleClass().add("hide");
 			
 
 		} catch (SQLException e) {
@@ -112,34 +112,22 @@ public class WordGame implements CallBackStopped{
 
 		btnAnswer1.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer1)) {
-//					waitUntilNext(5000);
-//					generateAnswers();
-				}
+				checkResult(btnAnswer1);
 			}
 		});
 		btnAnswer2.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer2)) {
-//					waitUntilNext(5000);
-//					generateAnswers();
-				}
+				checkResult(btnAnswer2);
 			}
 		});
 		btnAnswer3.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer3)) {
-//					waitUntilNext(5000);
-//					generateAnswers();
-				}
+				checkResult(btnAnswer3);
 			}
 		});
 		btnAnswer4.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if (checkResult(btnAnswer4)) {
-//					waitUntilNext(5000);
-//					generateAnswers();
-				}
+				checkResult(btnAnswer4);
 			}
 		});
 
@@ -165,7 +153,6 @@ public class WordGame implements CallBackStopped{
 				entries = idMax.getInt("max_id");
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -175,11 +162,9 @@ public class WordGame implements CallBackStopped{
 	private boolean checkResult(Button btnAnswer) {
 		System.out.println(solution);
 		if (btnAnswer.getText().toUpperCase().equals(solution)) {
-			// System.out.println("Korrekt");
 			winMessage(btnAnswer);
 			return true;
 		} else {
-			// System.out.println("Falsch");
 			loseMessage(btnAnswer);
 
 			return false;
@@ -191,9 +176,14 @@ public class WordGame implements CallBackStopped{
 		btnAnswer.getStyleClass().add("buttonRed");
 
 	}
-
+	/**
+	 * Aufruf des Sounds
+	 * Ausgabe des Korrekten Wortes
+	 * 
+	 * @param btnAnswer
+	 */
 	private void winMessage(Button btnAnswer) {
-		btnAnswer.getStyleClass().add("buttonGreen");
+//		btnAnswer.getStyleClass().add("buttonGreen");
 		showMessage(btnAnswer);
 		try {
 			aMan.play(sound,this);
@@ -206,6 +196,7 @@ public class WordGame implements CallBackStopped{
 
 	private void showMessage(Button btnAnswer) {
 		txtMessage.setText(btnAnswer.getText());
+		txtMessage.getStyleClass().remove("hide");
 		for (Button b : btnList) {
 			b.getStyleClass().add("hide");
 		}
