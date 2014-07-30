@@ -17,14 +17,14 @@
       <content>
         <AnchorPane id="Content">
           <children>
-            <TilePane prefColumns="2" prefHeight="-1.0" prefRows="2" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TilePane alignment="CENTER" orientation="HORIZONTAL" prefColumns="2" prefHeight="-1.0" prefRows="2" prefWidth="1209.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
                 <HBox id="HBox" alignment="CENTER" minHeight="236.0" prefHeight="378.9999000000025" prefWidth="1186.0" spacing="5.0" TilePane.alignment="CENTER">
                   <children>
-                    <ImageView fx:id="image" fitHeight="330.75" fitWidth="441.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
+                    <ImageView fx:id="image" fitHeight="292.75" fitWidth="390.3333333333333" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" />
                   </children>
                 </HBox>
-                <GridPane alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0" TilePane.alignment="TOP_LEFT">
+                <GridPane alignment="TOP_LEFT" gridLinesVisible="false" prefHeight="-1.0" prefWidth="-1.0" styleClass="tblRow50" TilePane.alignment="TOP_LEFT">
                   <children>
                     <Label fx:id="txtMessage" contentDisplay="CENTER" prefHeight="74.0" prefWidth="1157.0" styleClass="txtMessageWordGame" text="" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0">
                       <font>
@@ -37,7 +37,7 @@
                         <Button fx:id="btnAnswer3" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="89.0" prefWidth="574.0" text="" textAlignment="CENTER" />
                       </children>
                     </VBox>
-                    <VBox alignment="TOP_LEFT" prefHeight="-1.0" prefWidth="-1.0" spacing="40.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <VBox alignment="TOP_RIGHT" fillWidth="true" prefHeight="-1.0" prefWidth="-1.0" spacing="40.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
                       <children>
                         <Button id="btnAnswer1" fx:id="btnAnswer2" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="89.0" prefWidth="574.0" text="" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
                         <Button fx:id="btnAnswer1" alignment="CENTER" cancelButton="false" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="89.0" prefWidth="574.0" text="" textAlignment="CENTER" />
@@ -45,8 +45,8 @@
                     </VBox>
                   </children>
                   <columnConstraints>
-                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="ALWAYS" maxWidth="582.0" minWidth="10.0" prefWidth="575.0" />
+                    <ColumnConstraints hgrow="ALWAYS" maxWidth="911.0" minWidth="10.0" prefWidth="591.0" />
                   </columnConstraints>
                   <rowConstraints>
                     <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
@@ -69,7 +69,7 @@
           <children>
             <GridPane alignment="CENTER" prefHeight="769.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <children>
-                <Label fx:id="aufgabe" alignment="CENTER" prefHeight="220.0" prefWidth="574.0" text="Label" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label fx:id="aufgabe" alignment="CENTER_RIGHT" prefHeight="220.0" prefWidth="574.0" text="Label" textAlignment="RIGHT" textOverrun="ELLIPSIS" wrapText="false" GridPane.columnIndex="0" GridPane.rowIndex="1">
                   <font>
                     <Font name="System Bold" size="90.0" />
                   </font>
@@ -78,22 +78,22 @@
                   </GridPane.margin>
                 </Label>
                 <TextField fx:id="solution" prefHeight="220.0" prefWidth="316.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Label fx:id="mathResponse" alignment="CENTER" prefHeight="213.0" prefWidth="137.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Button fx:id="btnNewMath" mnemonicParsing="false" prefHeight="80.0" prefWidth="184.0001220703125" text="Neue Aufgabe" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Label fx:id="mathResponse" alignment="CENTER" cache="true" contentDisplay="CENTER" prefHeight="126.0" prefWidth="736.0" styleClass="mathResponse" text="Richtig !!!" textAlignment="CENTER" textFill="#0c9900" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0">
                   <font>
                     <Font size="60.0" />
                   </font>
                 </Label>
-                <Button fx:id="btnNewMath" mnemonicParsing="false" prefHeight="46.0" prefWidth="151.0" text="Neue Aufgabe" GridPane.columnIndex="2" GridPane.rowIndex="0" />
               </children>
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="974.0" minWidth="10.0" prefWidth="733.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="316.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="151.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="974.0" minWidth="10.0" prefWidth="736.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="274.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="705.0" minWidth="10.0" prefWidth="199.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="114.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="487.0" minHeight="-Infinity" prefHeight="487.0" valignment="CENTER" vgrow="ALWAYS" />
-                <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="168.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="155.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="487.0" minHeight="-Infinity" prefHeight="417.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
           </children>

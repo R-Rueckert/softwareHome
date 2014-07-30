@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import de.rjr910.audio.CallBackStopped;
+import de.rjr910.games.utilitiesMath.Animation;
 import de.rjr910.games.utilitiesMath.MathHandler;
 
 public class MathGame implements CallBackStopped {
@@ -17,6 +18,7 @@ public class MathGame implements CallBackStopped {
 	private Button btnNewMath;
 	int count = 0;
 	private Label response;
+	private Animation ani = new Animation();
 
 	public MathGame(Label aufgabe, TextField solution, Label mathResponse,
 			Button btnNewMath) {
@@ -37,30 +39,34 @@ public class MathGame implements CallBackStopped {
 
 			}
 		});
-		generatedQuestion.setText(generateMathQuestion(1, 20));
+//		ani.fadeOut(response);
+		response.setVisible(false);
 		myMathHandler = new MathHandler(this);
 		inputSolution.setOnKeyReleased(myMathHandler);
-
-//		checkResult();
+//		inputSolution.positionCaret(1);
+		generatedQuestion.setText(generateMathQuestion(1, 20));
+		// checkResult();
 	}
 
 	public boolean checkResult() {
 
-		System.out.println("get Count"+myMathHandler.getCount());
+		System.out.println("get Count" + myMathHandler.getCount());
 		System.out.println("Errechnete Lösung = " + mathSolution);
 		if (mathSolution < 10) {
-			System.out.println("Eingegebene Lösung = "+ inputSolution.getText());
+			System.out.println("Eingegebene Lösung = "
+					+ inputSolution.getText());
 			if (mathSolution == Integer.parseInt(inputSolution.getText())) {
 				System.out.println("Korrekt Einstellig");
 				return true;
 			}
-		}else if(mathSolution>=10){
-			System.out.println("Eingegebene Lösung = "+ inputSolution.getText());
+		} else if (mathSolution >= 10) {
+			System.out.println("Eingegebene Lösung = "
+					+ inputSolution.getText());
 			if (mathSolution == Integer.parseInt(inputSolution.getText())) {
 				System.out.println("Korrekt Zweistellig");
 				return true;
 			}
-			
+
 		}
 		return false;
 	}
@@ -68,7 +74,7 @@ public class MathGame implements CallBackStopped {
 	private String generateMathQuestion(int low, int high) {
 		String operator = chooseOperator();
 		inputSolution.setText("");
-		response.setText("");
+		// response.setText("");
 		int rand1 = generateRandom(low, high);
 		int rand2 = generateRandom(low, high);
 		if (rand1 > rand2) {
@@ -120,13 +126,16 @@ public class MathGame implements CallBackStopped {
 
 	@Override
 	public void stopped() {
-		if(checkResult()){
-			response.setText("Ja");
-			this.init();
+		if (checkResult()) {
+			// response.setText("Ja");
+			ani.fadeIn(response,this);
 		}
-		
+
 	}
 
-	
+	@Override
+	public void callNext() {
+		this.init();
+	}
 
 }

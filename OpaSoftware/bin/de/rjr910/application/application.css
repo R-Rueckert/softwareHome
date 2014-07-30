@@ -2,7 +2,9 @@
 	-fx-alignment: center;
 	-fx-background-color: #fff;
 }
-
+.tblRow50{
+	-fx-pref-width:50%;
+}
 .button {
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";

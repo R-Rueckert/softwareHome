@@ -19,7 +19,7 @@ import de.rjr910.audio.CallBackStopped;
 import de.rjr910.audio.NoSoundAvailableException;
 import de.rjr910.database.DatabaseManager;
 
-public class WordGame implements CallBackStopped{
+public class WordGame implements CallBackStopped {
 
 	private List<Button> btnList = new ArrayList<Button>();
 	@FXML
@@ -41,26 +41,26 @@ public class WordGame implements CallBackStopped{
 	@FXML
 	private ImageView image;
 	private AudioManager aMan = new AudioManager();
-	
-	public WordGame(ImageView image,Button btnAnswer1,Button btnAnswer2, Button btnAnswer3,Button btnAnswer4,Label txtMessage){
+
+	public WordGame(ImageView image, Button btnAnswer1, Button btnAnswer2,
+			Button btnAnswer3, Button btnAnswer4, Label txtMessage) {
 		this.btnAnswer1 = btnAnswer1;
 		this.btnAnswer2 = btnAnswer2;
 		this.btnAnswer3 = btnAnswer3;
 		this.btnAnswer4 = btnAnswer4;
 		this.image = image;
 		this.txtMessage = txtMessage;
-		
+
 	}
 
-
-	public void init(){
+	public void init() {
 		btnList.add(btnAnswer1);
 		btnList.add(btnAnswer2);
 		btnList.add(btnAnswer3);
 		btnList.add(btnAnswer4);
 		generateAnswers();
 	}
-	
+
 	private void setImage(String path) {
 		Image img = new Image(path);
 		this.image.setImage(img);
@@ -84,7 +84,6 @@ public class WordGame implements CallBackStopped{
 			b.getStyleClass().remove("buttonGreen");
 			b.getStyleClass().remove("hide");
 		}
-		
 
 		try {
 			stmt = getStatement();
@@ -104,7 +103,6 @@ public class WordGame implements CallBackStopped{
 			sound = rs.getString("AUDIOPATH");
 			setImage(path);
 			txtMessage.getStyleClass().add("hide");
-			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -176,18 +174,18 @@ public class WordGame implements CallBackStopped{
 		btnAnswer.getStyleClass().add("buttonRed");
 
 	}
+
 	/**
-	 * Aufruf des Sounds
-	 * Ausgabe des Korrekten Wortes
+	 * Aufruf des Sounds Ausgabe des Korrekten Wortes
 	 * 
 	 * @param btnAnswer
 	 */
 	private void winMessage(Button btnAnswer) {
-//		btnAnswer.getStyleClass().add("buttonGreen");
+		// btnAnswer.getStyleClass().add("buttonGreen");
 		showMessage(btnAnswer);
 		try {
-			aMan.play(sound,this);
-//			aMan.holdUntilAudioStopped();
+			aMan.play(sound, this);
+			// aMan.holdUntilAudioStopped();
 		} catch (NoSoundAvailableException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -202,21 +200,15 @@ public class WordGame implements CallBackStopped{
 		}
 	}
 
-	@SuppressWarnings("unused")
-	private void waitUntilNext(int sleepTime) {
-
-		try {
-			Thread.sleep(sleepTime);
-		} catch (InterruptedException ex) {
-			Thread.currentThread().interrupt();
-		}
-	}
-
-
 	@Override
 	public void stopped() {
-		generateAnswers();	
+		generateAnswers();
 	}
 
-	
+	@Override
+	public void callNext() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

@@ -36,8 +36,8 @@ public class Controller implements Initializable {
 	private Label mathResponse = new Label();
 	@FXML
 	private Button btnNewMath = new Button();
-	@FXML
-	private TabPane gameTabPane = new TabPane();
+//	@FXML
+//	private TabPane gameTabPane = new TabPane();
 
 
 	public void initialize(URL arg0, ResourceBundle arg1) {
