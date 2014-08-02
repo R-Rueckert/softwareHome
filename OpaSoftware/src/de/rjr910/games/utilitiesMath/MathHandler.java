@@ -1,29 +1,43 @@
 package de.rjr910.games.utilitiesMath;
 
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import de.rjr910.audio.CallBackStopped;
+import javafx.scene.input.KeyEvent;
+import de.rjr910.audio.GameInterface;
 
-public class MathHandler implements EventHandler<Event> {
+public class MathHandler implements EventHandler<KeyEvent> {
 
 	int count = 0;
-	CallBackStopped mg;
+	GameInterface mg;
 
-	public MathHandler(CallBackStopped mg) {
+	public MathHandler(GameInterface mg) {
 		this.mg = mg;
 	}
 
 	@Override
-	public void handle(Event event) {
-//		System.out.println("Key typed");
+	public void handle(KeyEvent event) {
+		
+		if(validateInput(event)){
+			count++;
+			mg.stopped();
+		}
 
-		count++;
-		mg.stopped();
+	}
+
+	private boolean validateInput(KeyEvent event) {
+		System.out.println(event.getCode());
+				
+		if(event.getCode().isDigitKey()){
+			
+			return true;
+		}else {
+			return false;
+		}
 
 	}
 
 	public int getCount() {
 		return count;
 	}
+
 
 }

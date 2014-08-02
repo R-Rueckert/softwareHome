@@ -6,7 +6,7 @@ public class DBConnTest {
             throws Exception {
         Class.forName("org.h2.Driver");
         Connection conn = DriverManager.
-            getConnection("jdbc:h2:~/test", "sa", "");
+            getConnection("jdbc:h2:~/DB/test", "sa", "");
 
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM DEUTSCH");

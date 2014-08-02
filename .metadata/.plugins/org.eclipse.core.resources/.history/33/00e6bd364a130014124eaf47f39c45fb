@@ -1,5 +1,0 @@
-package de.rjr910.audio;
-
-public class MyHandler implements  javafx.event.EventHandler{
-
-}

@@ -11,7 +11,7 @@ public class DatabaseManager {
 	public Connection getConnection(){
         try {
         	Class.forName("org.h2.Driver");
-			this.conn = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
+			this.conn = DriverManager.getConnection("jdbc:h2:~/DB/test", "sa", "");
 //			this.conn = DriverManager.getConnection("jdbc:h2:file:C:\\Workspace_Home\\softwareHome\\OpaSoftware\\DB\\test", "sa", "");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

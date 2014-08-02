@@ -1,11 +1,14 @@
 package de.rjr910.games;
 
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,11 +18,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import de.rjr910.audio.AudioManager;
-import de.rjr910.audio.CallBackStopped;
+import de.rjr910.audio.GameInterface;
 import de.rjr910.audio.NoSoundAvailableException;
 import de.rjr910.database.DatabaseManager;
 
-public class WordGame implements CallBackStopped {
+public class WordGame implements GameInterface {
 
 	private List<Button> btnList = new ArrayList<Button>();
 	@FXML
@@ -62,7 +65,18 @@ public class WordGame implements CallBackStopped {
 	}
 
 	private void setImage(String path) {
-		Image img = new Image(path);
+//		URL resource = getClass().getResource("../img/elefant.jpg");
+		System.out.println(path);
+//		System.out.println(getClass().getResourceAsStream("/de/rjr910/img/" + path));
+//		URL resource = getClass().getResource("../img/" + path);
+//		URL resource = getClass().getResource("de/rjr910/img/" + path);
+//		URL resource = ImageIO.read(getClass().getResource("de/rjr910/img/" + path));
+//		System.out.println("resou= " + resource);
+//		System.out.println("Image Path= " + resource);
+//		Image img = new Image(getClass().getResource("/img/elefant.png"));
+//		Image img = new Image(resource.toString());
+		Image img = new Image("de/rjr910/img/" + path);
+//		Image img = new Image(getClass().getResource(path));
 		this.image.setImage(img);
 		image.getStyleClass().add("imageDeutsch");
 	}
@@ -109,21 +123,25 @@ public class WordGame implements CallBackStopped {
 		}
 
 		btnAnswer1.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
 			public void handle(ActionEvent event) {
 				checkResult(btnAnswer1);
 			}
 		});
 		btnAnswer2.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
 			public void handle(ActionEvent event) {
 				checkResult(btnAnswer2);
 			}
 		});
 		btnAnswer3.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
 			public void handle(ActionEvent event) {
 				checkResult(btnAnswer3);
 			}
 		});
 		btnAnswer4.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
 			public void handle(ActionEvent event) {
 				checkResult(btnAnswer4);
 			}

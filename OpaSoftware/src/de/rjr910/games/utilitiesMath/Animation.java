@@ -1,6 +1,6 @@
 package de.rjr910.games.utilitiesMath;
 
-import de.rjr910.audio.CallBackStopped;
+import de.rjr910.audio.GameInterface;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,7 +11,7 @@ public class Animation {
 
 	
 	
-	public void fadeIn(Label label, final CallBackStopped c) {
+	public void fadeIn(Label label, final GameInterface c) {
 
 		FadeTransition fadeTransition = new FadeTransition(
 				Duration.millis(1000), label);

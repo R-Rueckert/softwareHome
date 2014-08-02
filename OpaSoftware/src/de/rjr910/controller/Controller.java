@@ -7,12 +7,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import de.rjr910.games.MathGame;
 import de.rjr910.games.WordGame;
-import de.rjr910.games.utilitiesMath.NumFieldFX;
 
 public class Controller implements Initializable {
 
@@ -40,6 +38,7 @@ public class Controller implements Initializable {
 //	private TabPane gameTabPane = new TabPane();
 
 
+	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		WordGame words = new WordGame(image,btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4,txtMessage);
 		words.init();

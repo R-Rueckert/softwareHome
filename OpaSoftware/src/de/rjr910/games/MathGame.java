@@ -5,11 +5,11 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import de.rjr910.audio.CallBackStopped;
+import de.rjr910.audio.GameInterface;
 import de.rjr910.games.utilitiesMath.Animation;
 import de.rjr910.games.utilitiesMath.MathHandler;
 
-public class MathGame implements CallBackStopped {
+public class MathGame implements GameInterface {
 
 	private Label generatedQuestion;
 	private TextField inputSolution;
@@ -39,13 +39,11 @@ public class MathGame implements CallBackStopped {
 
 			}
 		});
-//		ani.fadeOut(response);
 		response.setVisible(false);
 		myMathHandler = new MathHandler(this);
 		inputSolution.setOnKeyReleased(myMathHandler);
-//		inputSolution.positionCaret(1);
+//		inputSolution.setOnKeyTyped(myMathHandler);
 		generatedQuestion.setText(generateMathQuestion(1, 20));
-		// checkResult();
 	}
 
 	public boolean checkResult() {
