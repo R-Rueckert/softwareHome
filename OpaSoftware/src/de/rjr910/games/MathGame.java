@@ -35,7 +35,8 @@ public class MathGame implements GameInterface {
 			@Override
 			public void handle(ActionEvent event) {
 				System.out.println("Neue Aufgabe gefordert");
-				generatedQuestion.setText(generateMathQuestion(1, 20));
+//				generatedQuestion.setText(generateMathQuestion(1, 9));
+				generatedQuestion.setText(generateMathQuestion(1, 25));
 
 			}
 		});
@@ -43,7 +44,8 @@ public class MathGame implements GameInterface {
 		myMathHandler = new MathHandler(this);
 		inputSolution.setOnKeyReleased(myMathHandler);
 //		inputSolution.setOnKeyTyped(myMathHandler);
-		generatedQuestion.setText(generateMathQuestion(1, 20));
+//		generatedQuestion.setText(generateMathQuestion(1, 9));
+		generatedQuestion.setText(generateMathQuestion(1, 25));
 	}
 
 	public boolean checkResult() {

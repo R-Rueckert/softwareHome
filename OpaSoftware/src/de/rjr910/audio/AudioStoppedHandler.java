@@ -12,9 +12,7 @@ public class AudioStoppedHandler implements Runnable{
 
 	@Override
 	public void run() {
-		System.out.println("stopped");
 		wg.stopped();
-		
 	}
 
 }

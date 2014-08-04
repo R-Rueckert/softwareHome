@@ -1,5 +1,6 @@
 package de.rjr910.audio;
 
+import java.io.File;
 import java.net.URL;
 
 import javafx.scene.media.Media;
@@ -11,7 +12,7 @@ public class AudioManager {
 	private Media media;
 	private MediaPlayer mediaPlayer;
 
-	public void play(String sound, GameInterface c) throws NoSoundAvailableException {
+	public void play(String sound, GameInterface c){
 
 //		this.hit = new Media(new File("src////"+sound).toURI().toString());
 //		URL resource = getClass().getResource("files/elefant.mp3");
@@ -19,6 +20,7 @@ public class AudioManager {
 		
 //		this.hit = new Media(toString());
 //		this.hit = new Media("src////"+sound);
+		
 		this.media = new Media(resource.toString());
 		this.mediaPlayer = new MediaPlayer(media);
 		mediaPlayer.play();

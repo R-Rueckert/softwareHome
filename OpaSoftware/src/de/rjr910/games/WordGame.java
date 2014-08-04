@@ -100,7 +100,10 @@ public class WordGame implements GameInterface {
 		}
 
 		try {
-			stmt = getStatement();
+//			stmt = getStatement();
+			stmt = conn.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
 			rs = stmt.executeQuery("SELECT * FROM DEUTSCH");
 			// System.out.println("Entries DB= " + maxEntries);
 			System.out.println("DB-ID " + entry);
@@ -108,15 +111,20 @@ public class WordGame implements GameInterface {
 			for (int i = 0; i < entry; i++) {
 				rs.next();
 			}
-			this.btnAnswer1.setText(rs.getString("ANSWER1").toUpperCase());
-			this.btnAnswer2.setText(rs.getString("ANSWER2").toUpperCase());
-			this.btnAnswer3.setText(rs.getString("ANSWER3").toUpperCase());
-			this.btnAnswer4.setText(rs.getString("ANSWER4").toUpperCase());
+			
+			
+			
+			
+//			this.btnAnswer1.setText(rs.getString("ANSWER1").toUpperCase());
+//			this.btnAnswer2.setText(rs.getString("ANSWER2").toUpperCase());
+//			this.btnAnswer3.setText(rs.getString("ANSWER3").toUpperCase());
+//			this.btnAnswer4.setText(rs.getString("ANSWER4").toUpperCase());
 			solution = rs.getString("SOLUTION").toUpperCase();
 			String path = rs.getString("IMAGEPATH");
 			sound = rs.getString("AUDIOPATH");
 			setImage(path);
 			txtMessage.getStyleClass().add("hide");
+			setButtonText(rs);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -147,6 +155,72 @@ public class WordGame implements GameInterface {
 			}
 		});
 
+	}
+
+	private void setButtonText(ResultSet rs) throws SQLException {
+		
+		int rand = (int) (Math.random()*4);
+
+		System.out.println("Rand= " +rand);
+		switch (rand) {
+		case 0:
+//			System.out.println("Button "+rand + " = Richtig");
+//			btnList.get(rand).setText(rs.getString("SOLUTION").toUpperCase());
+			for(int i = rand;i<4+rand;i++){
+				btnList.get(i%4).setText(rs.getString("SOLUTION").toUpperCase());
+				if(rs.isLast()){
+//					System.out.println("Last RS");
+					rs.first();
+				}else{
+					rs.next();
+				}
+			}
+			break;
+		case 1:
+//			System.out.println("Button "+rand + " = Richtig");
+//			btnList.get(rand).setText(rs.getString("SOLUTION").toUpperCase());
+			for(int i = rand;i<4+rand;i++){
+				btnList.get(i%4).setText(rs.getString("SOLUTION").toUpperCase());
+				if(rs.isLast()){
+//					System.out.println("Last RS");
+					rs.first();
+				}else{
+					rs.next();
+				}
+			}
+			break;
+		case 2:
+//			System.out.println("Button "+rand + " = Richtig");
+//			btnList.get(rand).setText(rs.getString("SOLUTION").toUpperCase());
+			for(int i = rand;i<4+rand;i++){
+				btnList.get(i%4).setText(rs.getString("SOLUTION").toUpperCase());
+				if(rs.isLast()){
+//					System.out.println("Last RS");
+					rs.first();
+				}else{
+					rs.next();
+				}
+			}
+			break;
+		case 3:
+//			System.out.println("Button "+rand + " = Richtig");
+//			btnList.get(rand).setText(rs.getString("SOLUTION").toUpperCase());
+			for(int i = rand;i<4+rand;i++){
+				btnList.get(i%4).setText(rs.getString("SOLUTION").toUpperCase());
+				if(rs.isLast()){
+//					System.out.println("Last RS");
+					rs.first();
+				}else{
+					rs.next();
+				}
+			}
+			break;
+
+		
+		}
+//		for(int j = 0; j<4;j++){
+//			System.out.println(j+". " + btnList.get(j).getText());
+//		}
 	}
 
 	private int getRandomNumber(int maxEntries) {
@@ -182,7 +256,6 @@ public class WordGame implements GameInterface {
 			return true;
 		} else {
 			loseMessage(btnAnswer);
-
 			return false;
 		}
 
@@ -199,15 +272,8 @@ public class WordGame implements GameInterface {
 	 * @param btnAnswer
 	 */
 	private void winMessage(Button btnAnswer) {
-		// btnAnswer.getStyleClass().add("buttonGreen");
 		showMessage(btnAnswer);
-		try {
-			aMan.play(sound, this);
-			// aMan.holdUntilAudioStopped();
-		} catch (NoSoundAvailableException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		aMan.play(sound, this);
 	}
 
 	private void showMessage(Button btnAnswer) {
@@ -220,12 +286,12 @@ public class WordGame implements GameInterface {
 
 	@Override
 	public void stopped() {
-		generateAnswers();
+		callNext();
 	}
 
 	@Override
 	public void callNext() {
-		// TODO Auto-generated method stub
+		generateAnswers();
 
 	}
 

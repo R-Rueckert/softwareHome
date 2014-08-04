@@ -13,16 +13,13 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource(
 					"/de/rjr910/application/Menu.fxml"));
-			// root.setStyle("-fx-background-image: url('de/rjr910/img/background/board.jpg')");
-			// Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-			// Scene scene = new
-			// Scene(root,screenBounds.getHeight(),screenBounds.getWidth());
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(
 					getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.getIcons().add(
-					new Image("de/rjr910/img/background/robot3.png"));
+			// new Image("de/rjr910/img/background/icon.png"));
+					new Image("de/rjr910/img/background/robot3.jpg"));
 			// primaryStage.setFullScreen(true);
 
 			primaryStage.setTitle("Lebenslanges Lernen");
