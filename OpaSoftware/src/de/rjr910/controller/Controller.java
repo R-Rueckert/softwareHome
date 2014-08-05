@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import de.rjr910.games.Admin;
 import de.rjr910.games.MathGame;
 import de.rjr910.games.WordGame;
 
@@ -40,12 +41,16 @@ public class Controller implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		Admin adminPanel = new Admin();
+		adminPanel.setMaxNumber(15);
+		
 		WordGame words = new WordGame(image,btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4,txtMessage);
 		words.init();
 		
 		MathGame math = new MathGame(aufgabe,solution,mathResponse,btnNewMath);
 		math.init();
 			
+		
 		
 
 	}

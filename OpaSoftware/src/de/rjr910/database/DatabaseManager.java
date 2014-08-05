@@ -11,8 +11,8 @@ public class DatabaseManager {
 	public Connection getConnection(){
         try {
         	Class.forName("org.h2.Driver");
-//			this.conn = DriverManager.getConnection("jdbc:h2:~/DB/test", "sa", "");
-			this.conn = DriverManager.getConnection("jdbc:h2:~/DB-Test/test", "sa", "");
+			this.conn = DriverManager.getConnection("jdbc:h2:~/DB/test", "sa", "");
+//			this.conn = DriverManager.getConnection("jdbc:h2:~/DB-Test/test", "sa", "");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
