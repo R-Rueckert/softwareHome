@@ -53,6 +53,11 @@
 	-fx-font-weight:bold;
 	-fx-font-size: 60px;
 }
+
 .hide{
 	visibility: hidden;
+}
+
+.maxNumberInput{
+	-fx-font-size: 60px;
 }

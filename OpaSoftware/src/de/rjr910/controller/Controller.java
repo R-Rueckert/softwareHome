@@ -35,14 +35,15 @@ public class Controller implements Initializable {
 	private Label mathResponse = new Label();
 	@FXML
 	private Button btnNewMath = new Button();
-//	@FXML
+	@FXML
+	private TextField maxNumberInput = new TextField();
 //	private TabPane gameTabPane = new TabPane();
 
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		Admin adminPanel = new Admin();
-		adminPanel.setMaxNumber(15);
+		Admin adminPanel = new Admin(maxNumberInput);
+//		adminPanel.setMaxNumber(5);
 		
 		WordGame words = new WordGame(image,btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4,txtMessage);
 		words.init();

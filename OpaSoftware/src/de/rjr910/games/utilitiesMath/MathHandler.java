@@ -1,6 +1,7 @@
 package de.rjr910.games.utilitiesMath;
 
 import javafx.event.EventHandler;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import de.rjr910.audio.GameInterface;
 
@@ -26,7 +27,7 @@ public class MathHandler implements EventHandler<KeyEvent> {
 	private boolean validateInput(KeyEvent event) {
 		System.out.println(event.getCode());
 				
-		if(event.getCode().isDigitKey()){
+		if(event.getCode().isDigitKey() || event.getCode() == KeyCode.BACK_SPACE){
 			
 			return true;
 		}else {

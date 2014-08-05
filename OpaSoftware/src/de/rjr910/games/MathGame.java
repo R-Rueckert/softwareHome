@@ -1,5 +1,8 @@
 package de.rjr910.games;
 
+
+import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -41,11 +44,24 @@ public class MathGame implements GameInterface {
 		});
 		response.setVisible(false);
 		myMathHandler = new MathHandler(this);
+		
+		inputSolution.textProperty().addListener(new ChangeListener<String>() {
+			public void changed(ObservableValue<? extends String> arg0,String arg1, String newValue) {
+				if(!isNumeric(newValue)){
+				     inputSolution.setText("");
+				} else if(newValue.length() >= 4){
+				     inputSolution.setText(newValue.substring(0, 4));
+				}
+			}
+		});
 		inputSolution.setOnKeyReleased(myMathHandler);
-//		inputSolution.setOnKeyTyped(myMathHandler);
 		generatedQuestion.setText(generateMathQuestion(1, Admin.getMaxNumber()));
 	}
 
+	private boolean isNumeric(String str) {
+	   return str.matches("-?\\d+(.\\d+)?");
+	}
+	
 	public boolean checkResult() {
 
 		if (mathSolution < 10) {

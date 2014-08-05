@@ -80,7 +80,7 @@
                     <Insets left="50.0" />
                   </GridPane.margin>
                 </Label>
-                <TextField fx:id="solution" prefHeight="220.0" prefWidth="316.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="solution" alignment="CENTER" prefHeight="220.0" prefWidth="316.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Button fx:id="btnNewMath" mnemonicParsing="false" prefHeight="80.0" prefWidth="184.0001220703125" text="Neue Aufgabe" GridPane.columnIndex="2" GridPane.rowIndex="0" />
                 <Label fx:id="mathResponse" alignment="CENTER" cache="true" contentDisplay="CENTER" prefHeight="126.0" prefWidth="736.0" styleClass="mathResponse" text="Richtig !!!" textAlignment="CENTER" textFill="#0c9900" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0">
                   <font>
@@ -99,6 +99,53 @@
                 <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
+          </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Einstellungen">
+      <content>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+          <children>
+            <Accordion prefHeight="711.0" prefWidth="1209.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <expandedPane>
+                <TitledPane fx:id="x1" animated="false" text="Mathe">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                      <children>
+                        <GridPane prefHeight="663.0" prefWidth="773.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="432.0" AnchorPane.topAnchor="0.0">
+                          <children>
+                            <Label fx:id="setMaxNumberLabel" alignment="CENTER" prefHeight="68.0" prefWidth="603.0" text="Höchste Zahl im Mathe-Spiel" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                              <font>
+                                <Font size="32.0" />
+                              </font>
+                            </Label>
+                            <TextField id="MaxNumberInput" fx:id="maxNumberInput" alignment="CENTER" prefHeight="42.0" prefWidth="712.0" styleClass="maxNumberInput" text="20" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="601.0" minWidth="10.0" prefWidth="446.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="712.0" minWidth="10.0" prefWidth="327.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                      </children>
+                    </AnchorPane>
+                  </content>
+                </TitledPane>
+              </expandedPane>
+              <panes>
+                <fx:reference source="x1" />
+                <TitledPane animated="false" text="untitled">
+                  <content>
+                    <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
           </children>
         </AnchorPane>
       </content>
