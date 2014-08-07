@@ -262,6 +262,8 @@ public class WordGame implements GameInterface {
 	}
 
 	private void loseMessage(Button btnAnswer) {
+		
+		btnAnswer.getStyleClass().remove("buttonRed");
 		btnAnswer.getStyleClass().add("buttonRed");
 
 	}
