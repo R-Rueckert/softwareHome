@@ -115,7 +115,7 @@
                       <children>
                         <GridPane prefHeight="663.0" prefWidth="773.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="432.0" AnchorPane.topAnchor="0.0">
                           <children>
-                            <Label fx:id="setMaxNumberLabel" alignment="CENTER" prefHeight="68.0" prefWidth="603.0" text="Höchste Zahl im Mathe-Spiel" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                            <Label fx:id="setMaxNumberLabel" alignment="CENTER" prefHeight="68.0" prefWidth="603.0" text="Höchste mögliche Lösung" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                               <font>
                                 <Font size="32.0" />
                               </font>

@@ -38,7 +38,7 @@ public class MathGame implements GameInterface {
 			public void handle(ActionEvent event) {
 				System.out.println("Neue Aufgabe gefordert");
 				generatedQuestion.setText(generateMathQuestion(1,Admin
-						.getMaxNumber()));
+						.getMaxNumber()/2));
 
 			}
 		});
@@ -56,7 +56,7 @@ public class MathGame implements GameInterface {
 			}
 		});
 		inputSolution.setOnKeyReleased(myMathHandler);
-		generatedQuestion.setText(generateMathQuestion(1,Admin.getMaxNumber()));
+		generatedQuestion.setText(generateMathQuestion(1,Admin.getMaxNumber()/2));
 	}
 
 	private boolean isNumeric(String str) {

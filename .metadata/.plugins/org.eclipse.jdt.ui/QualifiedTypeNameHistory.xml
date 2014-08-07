@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.Comparable"/>
-<fullyQualifiedTypeName name="javafx.fxml.FXMLLoader"/>
-<fullyQualifiedTypeName name="javafx.scene.Parent"/>
-<fullyQualifiedTypeName name="java.awt.Button"/>
-<fullyQualifiedTypeName name="javafx.fxml.FXML"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="de.rjr910.database.DatabaseManager"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="java.awt.Image"/>
-<fullyQualifiedTypeName name="javafx.scene.image.ImageView"/>
-<fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
 <fullyQualifiedTypeName name="javafx.scene.layout.Background"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.AudioInputStream"/>
 <fullyQualifiedTypeName name="javax.sound.sampled.AudioSystem"/>
 <fullyQualifiedTypeName name="javafx.application.Application"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="javafx.scene.media.Media"/>
 <fullyQualifiedTypeName name="de.rjr910.audio.AudioManager"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -47,17 +35,29 @@
 <fullyQualifiedTypeName name="java.time.Duration"/>
 <fullyQualifiedTypeName name="javafx.util.Duration"/>
 <fullyQualifiedTypeName name="javafx.scene.control.Label"/>
-<fullyQualifiedTypeName name="javafx.event.EventHandler"/>
 <fullyQualifiedTypeName name="de.rjr910.games.utilitiesMath.Animation"/>
 <fullyQualifiedTypeName name="de.rjr910.audio.CallBackStopped"/>
 <fullyQualifiedTypeName name="de.rjr910.games.utilitiesMath.NumFieldFX"/>
-<fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
 <fullyQualifiedTypeName name="javafx.scene.text.Font"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="javafx.scene.media.AudioClip"/>
 <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
-<fullyQualifiedTypeName name="javafx.scene.input.KeyEvent"/>
-<fullyQualifiedTypeName name="javafx.scene.input.KeyCode"/>
 <fullyQualifiedTypeName name="com.sun.javafx.image.impl.ByteIndexed.Getter"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="de.rjr910.games.Admin.Range"/>
+<fullyQualifiedTypeName name="de.rjr910.games.Admin"/>
+<fullyQualifiedTypeName name="de.rjr910.games.utilitiesMath.IntegerTextField"/>
+<fullyQualifiedTypeName name="javax.swing.event.ChangeListener"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="javafx.beans.value.ObservableValue"/>
+<fullyQualifiedTypeName name="javafx.beans.Observable"/>
+<fullyQualifiedTypeName name="javafx.beans.value.ChangeListener"/>
+<fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
+<fullyQualifiedTypeName name="com.sun.glass.events.KeyEvent"/>
+<fullyQualifiedTypeName name="javafx.event.EventHandler"/>
+<fullyQualifiedTypeName name="javafx.scene.input.KeyEvent"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javafx.scene.input.KeyCode"/>
 </qualifiedTypeNameHistroy>
