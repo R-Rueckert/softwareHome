@@ -80,7 +80,7 @@
                     <Insets left="50.0" />
                   </GridPane.margin>
                 </Label>
-                <TextField fx:id="solution" prefHeight="220.0" prefWidth="316.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="solution" alignment="CENTER" prefHeight="220.0" prefWidth="316.0" styleClass="answer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <Button fx:id="btnNewMath" mnemonicParsing="false" prefHeight="80.0" prefWidth="184.0001220703125" text="Neue Aufgabe" GridPane.columnIndex="2" GridPane.rowIndex="0" />
                 <Label fx:id="mathResponse" alignment="CENTER" cache="true" contentDisplay="CENTER" prefHeight="126.0" prefWidth="736.0" styleClass="mathResponse" text="Richtig !!!" textAlignment="CENTER" textFill="#0c9900" visible="true" wrapText="false" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0">
                   <font>

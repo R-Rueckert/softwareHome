@@ -1,8 +1,7 @@
 package de.rjr910.games;
 
-
-import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -38,44 +37,46 @@ public class MathGame implements GameInterface {
 			@Override
 			public void handle(ActionEvent event) {
 				System.out.println("Neue Aufgabe gefordert");
-				generatedQuestion.setText(generateMathQuestion(1, Admin.getMaxNumber()));
+				generatedQuestion.setText(generateMathQuestion(1,Admin
+						.getMaxNumber()));
 
 			}
 		});
 		response.setVisible(false);
 		myMathHandler = new MathHandler(this);
-		
+
 		inputSolution.textProperty().addListener(new ChangeListener<String>() {
-			public void changed(ObservableValue<? extends String> arg0,String arg1, String newValue) {
-				if(!isNumeric(newValue)){
-				     inputSolution.setText("");
-				} else if(newValue.length() >= 4){
-				     inputSolution.setText(newValue.substring(0, 4));
+			public void changed(ObservableValue<? extends String> arg0,
+					String arg1, String newValue) {
+				if (!isNumeric(newValue)) {
+					inputSolution.setText("");
+				} else if (newValue.length() >= 4) {
+					inputSolution.setText(newValue.substring(0, 4));
 				}
 			}
 		});
 		inputSolution.setOnKeyReleased(myMathHandler);
-		generatedQuestion.setText(generateMathQuestion(1, Admin.getMaxNumber()));
+		generatedQuestion.setText(generateMathQuestion(1,Admin.getMaxNumber()));
 	}
 
 	private boolean isNumeric(String str) {
-	   return str.matches("-?\\d+(.\\d+)?");
+		return str.matches("-?\\d+(.\\d+)?");
 	}
-	
+
 	public boolean checkResult() {
 
 		if (mathSolution < 10) {
 			System.out.println("Eingegebene Lösung = "
 					+ inputSolution.getText());
 			if (mathSolution == Integer.parseInt(inputSolution.getText())) {
-				System.out.println("Korrekt Einstellig");
+				// System.out.println("Korrekt Einstellig");
 				return true;
 			}
 		} else if (mathSolution >= 10) {
 			System.out.println("Eingegebene Lösung = "
 					+ inputSolution.getText());
 			if (mathSolution == Integer.parseInt(inputSolution.getText())) {
-				System.out.println("Korrekt Zweistellig");
+				// System.out.println("Korrekt Zweistellig");
 				return true;
 			}
 
@@ -86,17 +87,56 @@ public class MathGame implements GameInterface {
 	private String generateMathQuestion(int low, int high) {
 		String operator = chooseOperator();
 		inputSolution.setText("");
-		// response.setText("");
+//		int low = 1;
+//		int high = generateHigh(operator, highestResult);
 		int rand1 = generateRandom(low, high);
 		int rand2 = generateRandom(low, high);
+
+		if (operator.equals(":")) {
+			while (rand1 % rand2 != 0 || rand2 % rand1 != 0) {
+				rand2 = generateRandom(low, high);
+				rand1 = generateRandom(low, high);
+			}
+		}
+
 		if (rand1 > rand2) {
-			mathSolution = calculateSolution(rand1, rand2, operator);
+			if (operator.equals("+") || operator.equals("-")) {
+				calculateSolution(rand1, rand2, operator);
+			} else if (operator.equals(":")) {
+				calculateSolution(rand1, rand2, operator);
+			} else {
+				calculateSolution(rand1, rand2, operator);
+			}
+			System.out.println("Lösung= " + mathSolution);
 			return rand1 + " " + operator + " " + rand2 + " = ";
 		} else {
-			mathSolution = calculateSolution(rand2, rand1, operator);
+			if (operator.equals("+") || operator.equals("-")) {
+				calculateSolution(rand2, rand1, operator);
+			} else if (operator.equals(":")) {
+				calculateSolution(rand2, rand1, operator);
+			} else {
+				calculateSolution(rand2, rand1, operator);
+			}
+			System.out.println("Lösung= " + mathSolution);
 			return rand2 + " " + operator + " " + rand1 + " = ";
 		}
 
+	}
+
+	private int generateHigh(String operator, int highestResult) {
+
+		switch (operator) {
+		case "+":
+			return highestResult / 2;
+		case "-":
+			return highestResult * 2;
+		case ":":
+			return highestResult * highestResult;
+		case "x":
+			return highestResult / highestResult;
+
+		}
+		return 0;
 	}
 
 	private String chooseOperator() {
@@ -108,27 +148,32 @@ public class MathGame implements GameInterface {
 		case 2:
 			return "-";
 		case 3:
-			return ":";
-		case 4:
 			return "x";
+		case 4:
+			return ":";
 		}
 		return null;
 	}
 
-	private int calculateSolution(int a, int b, String op) {
+	private void calculateSolution(int a, int b, String op) {
+
+		System.out.println("A= " + a + " B= " + b + " op= " + op);
 
 		switch (op) {
 		case "+":
-			return a + b;
+			mathSolution = a + b;
+			break;
 		case "-":
-			return a - b;
+			mathSolution = a - b;
+			break;
 		case ":":
-			return a / b;
+			mathSolution = a / b;
+			break;
 		case "x":
-			return a * b;
+			mathSolution = a * b;
+			break;
 		}
 
-		return 0;
 	}
 
 	private int generateRandom(int low, int high) {
@@ -139,8 +184,7 @@ public class MathGame implements GameInterface {
 	@Override
 	public void stopped() {
 		if (checkResult()) {
-			// response.setText("Ja");
-			ani.fadeIn(response,this);
+			ani.fadeIn(response, this);
 		}
 
 	}

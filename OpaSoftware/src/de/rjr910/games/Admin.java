@@ -28,9 +28,9 @@ public class Admin {
 							String arg1, String newValue) {
 						if (!isNumeric(newValue)) {
 							maxNumberInputField.setText("");
-						} else if (newValue.length() >= 4) {
+						} else if (newValue.length() >= 3) {
 							maxNumberInputField.setText(newValue
-									.substring(0, 4));
+									.substring(0, 3));
 						}
 					}
 				});
